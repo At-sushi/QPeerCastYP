@@ -179,14 +179,15 @@ void MainWindow::closeEvent(QCloseEvent *event)
 
 void MainWindow::setupMenuBar()
 {
-    setMenuBar(new QMenuBar(0));
-    menuBar()->setContextMenuPolicy(Qt::CustomContextMenu);
-    menuBar()->addMenu(m_actions->fileMenu(menuBar()));
-    QMenu *menu = m_actions->yellowPageMenu(menuBar());
+    QMenuBar *newBar = new QMenuBar(0);
+    newBar->setContextMenuPolicy(Qt::CustomContextMenu);
+    newBar->addMenu(m_actions->fileMenu(newBar));
+    QMenu *menu = m_actions->yellowPageMenu(newBar);
     menu->setIcon(QIcon());
-    menuBar()->addMenu(menu);
-    menuBar()->addMenu(m_actions->settingsMenu(menuBar()));
-    menuBar()->addMenu(m_actions->helpMenu(menuBar()));
+    newBar->addMenu(menu);
+    newBar->addMenu(m_actions->settingsMenu(newBar));
+    newBar->addMenu(m_actions->helpMenu(newBar));
+    setMenuBar(newBar);
 }
 
 void MainWindow::setupToolBar()
