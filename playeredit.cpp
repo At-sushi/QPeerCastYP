@@ -22,6 +22,7 @@ PlayerEdit::PlayerEdit(Settings *settings, QWidget *parent)
     label->setText(tr("<table cellspacing=6 width=100%>"
                       "<tr><td>$STREAM_URL</td><td>ストリーム URL (HTTP)</td></tr>"
                       "<tr><td>$STREAM_URL(scheme)</td><td>ストリーム URL (スキームを指定)</td></tr>"
+                      "<tr><td>$PLAYLIST_URL</td><td>プレイリスト URL</td></tr>"
                       "<tr><td>$CHANNEL(property)</td><td>チャンネル情報</td></tr></table>"));
 }
 
