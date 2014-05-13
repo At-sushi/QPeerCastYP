@@ -96,8 +96,8 @@ void MainWindow::setupChannelListWidget()
 
 void MainWindow::clearChannelListWidget()
 {
-    bool visible = isVisible();
-    if (!visible)
+    bool hidden = !isVisible();
+    if (hidden)
         setVisible(true);
 
     setUpdatesEnabled(false);
@@ -110,7 +110,7 @@ void MainWindow::clearChannelListWidget()
     }
     setUpdatesEnabled(true);
 
-    if (!visible)
+    if (hidden)
         setVisible(false);
 }
 
