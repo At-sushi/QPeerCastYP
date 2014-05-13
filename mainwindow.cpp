@@ -96,6 +96,10 @@ void MainWindow::setupChannelListWidget()
 
 void MainWindow::clearChannelListWidget()
 {
+    bool visible = isVisible();
+    if (!visible)
+        setVisible(true);
+
     setUpdatesEnabled(false);
     if (!m_channelListTabWidget->isVisible())
         delete m_mergedChannelList;
@@ -105,6 +109,9 @@ void MainWindow::clearChannelListWidget()
         delete widget;
     }
     setUpdatesEnabled(true);
+
+    if (!visible)
+        setVisible(false);
 }
 
 QList<ChannelListWidget *> MainWindow::channelListWidgets() const
