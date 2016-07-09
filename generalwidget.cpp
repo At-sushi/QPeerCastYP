@@ -12,8 +12,10 @@
 #include "settings.h"
 
 GeneralWidget::GeneralWidget(Settings *settings, QWidget *parent)
-    : SettingWidget(parent), m_settings(settings)
+    : SettingWidget(parent), m_settings(settings), m_font()
 {
+    m_font.fromString(settings->value("ChannelListWidget/Font").toString());
+
     setupUi(this);
     setDirty();
     QCompleter *completer = new QCompleter(this);
@@ -74,6 +76,8 @@ void GeneralWidget::write()
     m_settings->setValue("Program/UseCommonWebBrowser",
             useCommonWebBrowserRadioButton->isChecked());
     m_settings->setValue("Program/WebBrowser", webBrowserEdit->text());
+    m_settings->setValue("ChannelListWidget/Font",
+            m_font);
 }
 
 void GeneralWidget::on_selectWebBrowserButton_clicked()
@@ -84,5 +88,15 @@ void GeneralWidget::on_selectWebBrowserButton_clicked()
     QString program = QFileDialog::getOpenFileName(this, tr("プログラムを選択"));
     if (!program.isEmpty())
         webBrowserEdit->setText(program);
+}
+
+void GeneralWidget::on_selectChannelListFontButton_clicked()
+{
+    bool ok;
+    QFont font = QFontDialog::getFont(&ok, m_font, this);
+    if (ok) {
+        m_font = font;
+        setDirty();
+    }
 }
 

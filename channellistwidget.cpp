@@ -310,6 +310,10 @@ void ChannelListWidget::readSettings()
             m_sortOrder += var.toInt();
         if (m_sortOrder.isEmpty())
             m_sortOrder << Status << Uptime << Listeners << Name;
+        QFont font;
+        font.fromString(s->value("Font").toString());
+        setFont(font);
+
     s->endGroup();
 }
 

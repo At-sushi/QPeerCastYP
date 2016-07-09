@@ -27,9 +27,11 @@ public:
 
 private slots:
     void on_selectWebBrowserButton_clicked();
+    void on_selectChannelListFontButton_clicked();
 
 private:
     Settings *m_settings;
+    QFont m_font;
 };
 
 #endif // GENERALWIDGET_H

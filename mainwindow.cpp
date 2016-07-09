@@ -479,6 +479,9 @@ void MainWindow::showSettings(SettingsDialog::WidgetIndex index)
                 w->setCustomToolTip(settings->value("ChannelListWidget/CustomToolTip").toBool());
                 w->setLinkEnabled(settings->value("ChannelListWidget/LinkEnabled").toBool()); 
                 w->setLinkType(settings->value("ChannelListWidget/LinkType").toInt()); 
+                QFont font;
+                font.fromString(settings->value("ChannelListWidget/Font").toString());
+                w->setFont(font);
             }
         }
         if (dialog.yellowPageEdit()->isDirty()) {
