@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>545</width>
-    <height>442</height>
+    <height>461</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -203,6 +203,13 @@
          </spacer>
         </item>
        </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="addToFavoritesQuietlyCheckBox">
+        <property name="text">
+         <string>ダイアログなしでお気に入り/NGに追加する</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

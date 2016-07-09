@@ -47,6 +47,8 @@ void GeneralWidget::setValue(bool reset)
             settings->value("ChannelListWidget/LinkEnabled").toBool());
     linkTypeComboBox->setCurrentIndex(linkTypeComboBox->findData(
             settings->value("ChannelListWidget/LinkType").toBool()));
+    addToFavoritesQuietlyCheckBox->setChecked(
+            settings->value("ChannelListWidget/AddToFavoritesQuietly").toBool());
     showSystemTrayIconCheckBox->setChecked(
             settings->value("SystemTrayIcon/Enabled").toBool());
     bool useCommonWebBrowser = settings->value("Program/UseCommonWebBrowser").toBool();
@@ -71,6 +73,8 @@ void GeneralWidget::write()
             linkEnabledCheckBox->isChecked());
     m_settings->setValue("ChannelListWidget/LinkType",
             linkTypeComboBox->itemData(linkTypeComboBox->currentIndex()));
+    m_settings->setValue("ChannelListWidget/AddToFavoritesQuietly",
+            addToFavoritesQuietlyCheckBox->isChecked());
     m_settings->setValue("SystemTrayIcon/Enabled",
             showSystemTrayIconCheckBox->isChecked());
     m_settings->setValue("Program/UseCommonWebBrowser",

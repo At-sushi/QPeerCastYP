@@ -529,7 +529,26 @@ void ChannelListWidget::playChannel(Channel *channel)
 
 void ChannelListWidget::addToFavorites(int score)
 {
-    if (Channel *channel = currentChannel()) {
+    Channel *channel = currentChannel();
+
+    if (!channel) return;
+
+    if (qApp->settings()->value("ChannelListWidget/AddToFavoritesQuietly").toBool()) {
+        ChannelMatcher matcher(qApp->settings());
+
+        ChannelMatcher::Expression exp;
+        exp.pattern = channel->name(true);
+        exp.matchFlags = Qt::MatchStartsWith;
+        exp.targetFlags = ChannelMatcher::Name;
+        exp.point = score;
+        matcher.expressions().append(&exp);
+        matcher.saveExpressions();
+
+        QString msg = QString("「%1」を%2に追加しました。")
+            .arg(channel->name(true))
+            .arg( score < 0 ? "NG" : "お気に入り" );
+        qApp->systemTrayIcon()->showMessage("お知らせ", msg);
+    } else {
         SettingsDialog dialog(qApp->settings(), this);
         dialog.setCurrentWidget(SettingsDialog::Favorite);
         dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
