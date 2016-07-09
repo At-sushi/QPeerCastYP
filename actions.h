@@ -32,6 +32,7 @@ public:
     QAction *toggleAutoUpdateAction() const;
     QAction *playChannelAction() const;
     QAction *addToFavoritesAction() const;
+    QAction *addToNGAction() const;
     QAction *openContactUrlAction() const;
     QAction *openContactUrlWith2chBrowserAction() const;
     QAction *copyStreamUrlAction() const;
@@ -70,6 +71,7 @@ private:
     QAction *m_toggleAutoUpdateAction;
     QAction *m_playChannelAction;
     QAction *m_addToFavoritesAction;
+    QAction *m_addToNGAction;
     QAction *m_openContactUrlAction;
     QAction *m_openContactUrlWith2chBrowserAction;
     QAction *m_copyStreamUrlAction;

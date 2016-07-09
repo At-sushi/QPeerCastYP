@@ -462,6 +462,7 @@ void ChannelListWidget::updateActions()
     bool enabled = (bool)channel;
     actions->playChannelAction()->setEnabled(enabled ? channel->isPlayable() : false);
     actions->addToFavoritesAction()->setEnabled(enabled);
+    actions->addToNGAction()->setEnabled(enabled);
     actions->copyChannelInfoAction()->setEnabled(enabled);
     actions->copyStreamUrlAction()->setEnabled(enabled);
     bool contactUrlAvailable = false;
@@ -526,12 +527,12 @@ void ChannelListWidget::playChannel(Channel *channel)
     qApp->actions()->playChannel(channel);
 }
 
-void ChannelListWidget::addToFavorites()
+void ChannelListWidget::addToFavorites(int score)
 {
     if (Channel *channel = currentChannel()) {
         SettingsDialog dialog(qApp->settings(), this);
         dialog.setCurrentWidget(SettingsDialog::Favorite);
-        dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, 3);
+        dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
         dialog.exec();
     }
 }

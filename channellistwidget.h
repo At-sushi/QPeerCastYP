@@ -73,7 +73,7 @@ public slots:
     void currentItemChanged(QTreeWidgetItem *current);
     void findItems(const QString &text, Qt::MatchFlags flags = Qt::MatchContains);
     void playChannel(Channel *channel = 0);
-    void addToFavorites();
+    void addToFavorites(int score = 3);
     void openContactUrl();
     void copyStreamUrl();
     void copyContactUrl();

@@ -208,6 +208,7 @@ void MainWindow::setupToolBar()
     // m_mainToolBar->addAction(m_actions->playChannelAction());
     m_mainToolBar->addAction(m_actions->openContactUrlAction());
     m_mainToolBar->addAction(m_actions->addToFavoritesAction());
+    m_mainToolBar->addAction(m_actions->addToNGAction());
     m_mainToolBar->addAction(m_actions->findChannelAction());
     m_mainToolBar->addAction(m_actions->showSettingsAction());
     connect(m_mainToolBar, SIGNAL(orientationChanged(Qt::Orientation)),
@@ -357,6 +358,12 @@ void MainWindow::addToFavorites()
 {
     if (currentChannelListWidget())
         currentChannelListWidget()->addToFavorites();
+}
+
+void MainWindow::addToNG()
+{
+    if (currentChannelListWidget())
+        currentChannelListWidget()->addToFavorites(-10);
 }
 
 void MainWindow::openContactUrl()

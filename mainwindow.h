@@ -49,6 +49,7 @@ public slots:
     void setAutoUpdateInterval(int sec);
     void playChannel();
     void addToFavorites();
+    void addToNG();
     void openContactUrl();
     void copyStreamUrl();
     void copyContactUrl();
