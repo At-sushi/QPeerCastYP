@@ -7,6 +7,8 @@
  *  (at your option) any later version.
  *
  */
+#include <limits.h>
+
 #include "channellistwidget.h"
 #include "actions.h"
 #include "application.h"
@@ -221,7 +223,7 @@ private:
 };
 
 ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
-    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0)
+    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX)
 {
     setYellowPage(yellowPage);
     m_lastUpdatedTime = QDateTime::currentDateTime();
@@ -439,6 +441,8 @@ void ChannelListWidget::addItems(const ChannelList &channels)
         if (!showStoppedChannels and channel->status() & Channel::Stopped)
             continue;
         if (dontShowMinusScoreChannels and channel->score() < 0)
+            continue;
+        if (m_minimumScore != INT_MAX and channel->score() < m_minimumScore)
             continue;
         new ChannelListWidgetItem(this, channel);
     }
@@ -888,5 +892,15 @@ void ChannelListWidget::headerContextMenuRequested(const QPoint &pos)
         int column = action->property("id").toInt();
         setColumnHidden(column, !action->isChecked());
     }
+}
+
+void ChannelListWidget::setMinimumScore(int score)
+{
+    m_minimumScore = score;
+}
+
+int ChannelListWidget::minimumScore()
+{
+    return m_minimumScore;
 }
 

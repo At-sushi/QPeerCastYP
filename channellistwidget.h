@@ -66,6 +66,9 @@ public:
     void updateActions();
     void readSettings();
 
+    void setMinimumScore(int score);
+    int minimumScore();
+
 public slots:
     void updateYellowPage();
     void updateItems();
@@ -123,6 +126,7 @@ private:
     int m_minimumItemHeight;
     bool m_needClear;
     QList<int> m_sortOrder;
+    int m_minimumScore;
 };
 
 #endif // CHANNELLISTWIDGET_H

@@ -83,6 +83,11 @@ void MainWindow::setupChannelListWidget()
     connect(m_channelListFindBar, SIGNAL(findRequest(QString, Qt::MatchFlags)),
             m_channelListTabWidget, SLOT(findRequest(QString, Qt::MatchFlags)));
 
+    ChannelListWidget *favoritesList = new ChannelListWidget(m_channelListTabWidget, manager);
+    favoritesList->setMinimumScore(1);
+    favoritesList->setAttribute(Qt::WA_MacShowFocusRect, false);
+    m_channelListTabWidget->addTab(favoritesList, "お気に入り");
+
     foreach (YellowPage *yp, manager->yellowPages()) {
         if (!yp->isEnabled())
             continue;
