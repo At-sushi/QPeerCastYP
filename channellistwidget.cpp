@@ -225,6 +225,7 @@ private:
 ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
     : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX)
 {
+    setAutoScroll(false);
     setYellowPage(yellowPage);
     m_lastUpdatedTime = QDateTime::currentDateTime();
     QVector<QString> labels(LabelCount);
