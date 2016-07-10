@@ -171,7 +171,16 @@ QMenu *Actions::yellowPageMenu(QWidget *parent) const
     QMenu *menu = new QMenu(tr("イエローページ(&Y)"), parent);
     menu->addAction(m_updateYellowPageAction);
     menu->addAction(m_toggleAutoUpdateAction);
+    menu->addSeparator();
+    menu->addAction(m_findChannelAction);
+    return menu;
+}
+
+QMenu *Actions::channelMenu(QWidget *parent) const
+{
+    QMenu *menu = new QMenu(tr("チャンネル(&C)"), parent);
     menu->addAction(m_playChannelAction);
+    menu->addAction(m_openContactUrlAction);
     if (!m_userActions->actions().isEmpty()) {
         menu->addSeparator();
         foreach (QAction *action, m_userActions->actions())
@@ -181,17 +190,41 @@ QMenu *Actions::yellowPageMenu(QWidget *parent) const
     menu->addAction(m_addToFavoritesAction);
     menu->addAction(m_addToNGAction);
     menu->addSeparator();
+    menu->addAction(m_copyChannelInfoAction);
+    menu->addAction(m_copyStreamUrlAction);
+    menu->addAction(m_copyContactUrlAction);
+    return menu;
+}
+
+QMenu *Actions::channelContextMenu(QWidget *parent) const
+{
+    QMenu *menu = new QMenu("チャンネルコンテキストメニュー", parent);
+    if (m_mainWindow->menuBar()->isHidden() && m_mainWindow->toolBar()->isHidden()) {
+        menu->addAction(m_updateYellowPageAction);
+        menu->addAction(m_toggleAutoUpdateAction);
+        menu->addSeparator();
+    }
+    menu->addAction(m_playChannelAction);
     menu->addAction(m_openContactUrlAction);
+    if (!m_userActions->actions().isEmpty()) {
+        menu->addSeparator();
+        foreach (QAction *action, m_userActions->actions())
+            menu->addAction(action);
+    }
+    menu->addSeparator();
+    menu->addAction(m_addToFavoritesAction);
+    menu->addAction(m_addToNGAction);
     menu->addSeparator();
     menu->addAction(m_copyChannelInfoAction);
     menu->addAction(m_copyStreamUrlAction);
     menu->addAction(m_copyContactUrlAction);
-    menu->addSeparator();
-    menu->addAction(m_findChannelAction);
+    if (m_mainWindow->menuBar()->isHidden() && m_mainWindow->toolBar()->isHidden()) {
+        menu->addSeparator();
+        menu->addAction(m_findChannelAction);
+    }
     if (m_mainWindow->menuBar()->isHidden()) {
         menu->addSeparator();
         menu->addMenu(settingsMenu(menu));
-        // menu->addMenu(helpMenu(menu));
         menu->addSeparator();
         menu->addAction(m_quitAction);
     }

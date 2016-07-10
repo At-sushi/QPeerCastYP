@@ -820,7 +820,7 @@ void ChannelListWidget::mousePressEvent(QMouseEvent *event)
             m_pressedChannel = item->channel();
     } else if (event->button() == Qt::RightButton) {
         updateActions();
-        QMenu *menu = qApp->actions()->yellowPageMenu();
+        QMenu *menu = qApp->actions()->channelContextMenu();
         menu->exec(QCursor::pos());
         delete menu;
     } else if (event->button() == Qt::MidButton) {

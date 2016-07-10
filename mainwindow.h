@@ -34,6 +34,8 @@ public:
     Channel *currentChannel() const;
     ChannelListTabWidget *channelListTabWidget() const;
 
+    QToolBar *toolBar() const;
+
 #ifdef Q_WS_X11
     void activateWindow();
 #endif

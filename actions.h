@@ -30,6 +30,9 @@ public:
     QAction *updateYellowPageAction() const;
     QAction *updateYellowPageToolBarAction() const;
     QAction *toggleAutoUpdateAction() const;
+    QAction *findChannelAction() const;
+
+    QMenu *channelMenu(QWidget *parent) const;
     QAction *playChannelAction() const;
     QAction *addToFavoritesAction() const;
     QAction *addToNGAction() const;
@@ -38,7 +41,8 @@ public:
     QAction *copyStreamUrlAction() const;
     QAction *copyContactUrlAction() const;
     QAction *copyChannelInfoAction() const;
-    QAction *findChannelAction() const;
+
+    QMenu *channelContextMenu(QWidget *parent = 0) const;
 
     QMenu *settingsMenu(QWidget *parent = 0) const;
     QAction *showStatusBarAction() const;

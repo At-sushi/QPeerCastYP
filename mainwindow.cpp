@@ -197,6 +197,7 @@ void MainWindow::setupMenuBar()
     QMenu *menu = m_actions->yellowPageMenu(newBar);
     menu->setIcon(QIcon());
     newBar->addMenu(menu);
+    newBar->addMenu(m_actions->channelMenu(newBar));
     newBar->addMenu(m_actions->settingsMenu(newBar));
     newBar->addMenu(m_actions->helpMenu(newBar));
     setMenuBar(newBar);
@@ -296,6 +297,11 @@ Channel *MainWindow::currentChannel() const
 ChannelListTabWidget *MainWindow::channelListTabWidget() const
 {
     return m_channelListTabWidget;
+}
+
+QToolBar *MainWindow::toolBar() const
+{
+    return m_mainToolBar;
 }
 
 void MainWindow::updateYellowPage()
