@@ -392,9 +392,12 @@ void ChannelListWidget::updateYellowPage()
 {
     if (!yellowPageCount())
         return;
-    m_needClear = true;
-    if (m_yellowPage->isUpdating())
+    if (m_yellowPage->isUpdating()) {
+        // この間に正常終了のシグナルが発火して、m_needClear の値が以
+        // 下の ChannelListWidget::done で書き換えられる場合がある。
         m_yellowPage->stopUpdate();
+    }
+    m_needClear = true;
     setSortingEnabled(false);
     m_yellowPage->update();
     updateCursor();
