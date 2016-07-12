@@ -25,6 +25,7 @@
 #include "generalwidget.h"
 #include "yellowpageedit.h"
 #include "useractionedit.h"
+#include "favoriteeditdialog.h"
 
 #include "ui_aboutqpeercastyp.h"
 
@@ -211,10 +212,7 @@ void MainWindow::setupToolBar()
     m_mainToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
 
     m_mainToolBar->addAction(m_actions->updateYellowPageToolBarAction());
-    // m_mainToolBar->addAction(m_actions->playChannelAction());
-    m_mainToolBar->addAction(m_actions->openContactUrlAction());
-    m_mainToolBar->addAction(m_actions->addToFavoritesAction());
-    m_mainToolBar->addAction(m_actions->addToNGAction());
+    m_mainToolBar->addAction(m_actions->showFavoritesAction());
     m_mainToolBar->addAction(m_actions->findChannelAction());
     m_mainToolBar->addAction(m_actions->showSettingsAction());
     connect(m_mainToolBar, SIGNAL(orientationChanged(Qt::Orientation)),
@@ -515,6 +513,13 @@ void MainWindow::showSettings(SettingsDialog::WidgetIndex index)
             setupMenuBar();
         }
     }
+}
+
+void MainWindow::showFavorites()
+{
+    FavoriteEditDialog dialog(qApp->settings(), this);
+
+    dialog.exec();
 }
 
 void MainWindow::aboutQt()

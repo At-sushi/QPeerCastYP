@@ -26,6 +26,7 @@
 #include "sound.h"
 #include "tooltip.h"
 #include "viemacsbindings.h"
+#include "favoriteeditdialog.h"
 
 class ChannelListWidgetItem : public QTreeWidgetItem
 {
@@ -554,8 +555,7 @@ void ChannelListWidget::addToFavorites(int score)
             .arg( score < 0 ? "NG" : "お気に入り" );
         qApp->systemTrayIcon()->showMessage("お知らせ", msg);
     } else {
-        SettingsDialog dialog(qApp->settings(), this);
-        dialog.setCurrentWidget(SettingsDialog::Favorite);
+        FavoriteEditDialog dialog(qApp->settings(), this);
         dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
         dialog.exec();
     }

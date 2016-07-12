@@ -16,7 +16,6 @@ class Settings;
 class ChannelMatcher;
 class GeneralWidget;
 class YellowPageEdit;
-class FavoriteEdit;
 class PlayerEdit;
 class NotificationWidget;
 class NetworkWidget;
@@ -30,7 +29,6 @@ public:
     enum WidgetIndex {
         General,
         YellowPage,
-        Favorite,
         Notification,
         Player,
         UserAction,
@@ -42,7 +40,6 @@ public:
 
     GeneralWidget *generalWidget() const;
     YellowPageEdit *yellowPageEdit() const;
-    FavoriteEdit *favoriteEdit() const;
     NotificationWidget *notificationWidget() const;
     UserActionEdit *userActionEdit() const;
     NetworkWidget *networkWidget() const;
@@ -61,7 +58,6 @@ private:
     Settings *m_settings;
     GeneralWidget *m_generalWidget;
     YellowPageEdit *m_yellowPageEdit;
-    FavoriteEdit *m_favoriteEdit;
     PlayerEdit *m_playerEdit;
     NotificationWidget *m_notificationWidget;
     UserActionEdit *m_userActionEdit;

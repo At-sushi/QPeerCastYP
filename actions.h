@@ -50,6 +50,7 @@ public:
     QAction *showToolBarAction() const;
     QAction *showTabBarAction() const;
     QAction *showSettingsAction() const;
+    QAction *showFavoritesAction() const;
 
     QMenu *helpMenu(QWidget *parent = 0) const;
     QAction *aboutQPeerCastYPAction() const;
@@ -88,6 +89,7 @@ private:
     QAction *m_showStatusBarAction;
     QAction *m_showTabBarAction;
     QAction *m_showSettingsAction;
+    QAction *m_showFavoritesAction;
 
     QAction *m_aboutQPeerCastYPAction;
     QAction *m_aboutQtAction;

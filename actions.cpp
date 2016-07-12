@@ -128,6 +128,11 @@ Actions::Actions(MainWindow *mainWindow)
     m_mainWindow->addAction(m_showSettingsAction);
     connect(m_showSettingsAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(showSettings()));
 
+    m_showFavoritesAction = new QAction(QIcon(":/images/organize_favorites.png"), tr("お気に入りを整理(&O)..."), this);
+    m_showFavoritesAction->setIconText(tr("お気に入りを整理"));
+    m_mainWindow->addAction(m_showFavoritesAction);
+    connect(m_showFavoritesAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(showFavorites()));
+
     // ヘルプ
     m_aboutQPeerCastYPAction = new QAction(tr("Q&PeerCastYP について"), this);
     m_aboutQPeerCastYPAction->setIcon(QApplication::windowIcon());
@@ -189,6 +194,8 @@ QMenu *Actions::channelMenu(QWidget *parent) const
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
     menu->addAction(m_addToNGAction);
+    menu->addSeparator();
+    menu->addAction(m_showFavoritesAction);
     menu->addSeparator();
     menu->addAction(m_copyChannelInfoAction);
     menu->addAction(m_copyStreamUrlAction);
@@ -402,6 +409,11 @@ QAction *Actions::showTabBarAction() const
 QAction *Actions::showSettingsAction() const
 {
     return m_showSettingsAction;
+}
+
+QAction *Actions::showFavoritesAction() const
+{
+    return m_showFavoritesAction;
 }
 
 QAction *Actions::aboutQPeerCastYPAction() const

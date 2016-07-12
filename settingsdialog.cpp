@@ -11,7 +11,6 @@
 #include "settings.h"
 #include "generalwidget.h"
 #include "yellowpageedit.h"
-#include "favoriteedit.h"
 #include "channelmatcher.h"
 #include "playeredit.h"
 #include "notificationwidget.h"
@@ -31,10 +30,6 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     m_yellowPageEdit = new YellowPageEdit(settings, m_tabWidget);
     m_yellowPageEdit->setValue();
     m_tabWidget->insertTab(YellowPage, m_yellowPageEdit, tr("イエローページ"));
-
-    m_favoriteEdit = new FavoriteEdit(settings, m_tabWidget);
-    m_favoriteEdit->setValue();
-    m_tabWidget->insertTab(Favorite, m_favoriteEdit, tr("お気に入り"));
 
     m_notificationWidget = new NotificationWidget(settings, m_tabWidget);
     m_notificationWidget->setValue();
@@ -90,11 +85,6 @@ YellowPageEdit *SettingsDialog::yellowPageEdit() const
     return m_yellowPageEdit;
 }
 
-FavoriteEdit *SettingsDialog::favoriteEdit() const
-{
-    return m_favoriteEdit;
-}
-
 NotificationWidget *SettingsDialog::notificationWidget() const
 {
     return m_notificationWidget;
@@ -121,8 +111,6 @@ void SettingsDialog::accept()
         m_generalWidget->write();
     if (m_yellowPageEdit->isDirty())
         m_yellowPageEdit->write();
-    if (m_favoriteEdit->isDirty())
-        m_favoriteEdit->write();
     if (m_notificationWidget->isDirty())
         m_notificationWidget->write();
     if (m_playerEdit->isDirty())

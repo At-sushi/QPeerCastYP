@@ -66,6 +66,7 @@ public slots:
     void setToolBarVisible(bool shown);
     void setTabBarVisible(bool shown);
     void showSettings(SettingsDialog::WidgetIndex index = SettingsDialog::General);
+    void showFavorites();
 
     void aboutQt();
     void aboutQPeerCastYP();

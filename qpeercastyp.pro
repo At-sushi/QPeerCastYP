@@ -206,7 +206,8 @@ HEADERS += application.h \
            channellistfindbar.h \
            yellowpage.h \
            yellowpagemanager.h \
-           pcrawproxy.h
+           pcrawproxy.h \
+           favoriteeditdialog.h
 
 SOURCES += main.cpp \
            application.cpp \
@@ -238,7 +239,8 @@ SOURCES += main.cpp \
            channellistfindbar.cpp \
            yellowpage.cpp \
            yellowpagemanager.cpp \
-           pcrawproxy.cpp
+           pcrawproxy.cpp \
+           favoriteeditdialog.cpp
 
 FORMS +=   channellistfindbar.ui \
            generalwidget.ui \
@@ -253,5 +255,6 @@ FORMS +=   channellistfindbar.ui \
            useractionedit.ui \
            commandactiondialog.ui \
            advancedwidget.ui \
-           aboutqpeercastyp.ui
+           aboutqpeercastyp.ui \
+           favoriteeditdialog.ui
 
