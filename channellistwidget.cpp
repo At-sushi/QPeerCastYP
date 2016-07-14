@@ -397,7 +397,6 @@ void ChannelListWidget::updateYellowPage()
         // 下の ChannelListWidget::done で書き換えられる場合がある。
         m_yellowPage->stopUpdate();
     }
-    m_needClear = true;
     setSortingEnabled(false);
     m_yellowPage->update();
     updateCursor();
@@ -407,10 +406,8 @@ void ChannelListWidget::done(YellowPage *yp, bool error)
 {
     if (error)
         qApp->mainWindow()->showErrorMessage(yp->errorString());
-    if (m_needClear)
-        clear();
-    m_needClear = false;
-    addItems(yp->channels());
+    clear();
+    addItems(m_yellowPage->channels());
     qApp->mainWindow()->updateStatusBar();
     m_lastUpdatedTime = QDateTime::currentDateTime();
     updateActions();

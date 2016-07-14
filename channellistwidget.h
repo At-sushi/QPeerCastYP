@@ -124,7 +124,6 @@ private:
     Channel *m_pressedChannel;
     Channel *m_lastHoveredLink;
     int m_minimumItemHeight;
-    bool m_needClear;
     QList<int> m_sortOrder;
     int m_minimumScore;
 };
