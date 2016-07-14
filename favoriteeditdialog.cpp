@@ -1,8 +1,8 @@
 #include "favoriteeditdialog.h"
 #include "favoriteedit.h"
 #include "settings.h"
-#include "actions.h"
 #include "application.h"
+#include "yellowpagemanager.h"
 
 FavoriteEditDialog::FavoriteEditDialog(Settings *settings, QWidget *parent)
     : QDialog(parent), m_settings(settings)
@@ -30,7 +30,7 @@ void FavoriteEditDialog::on_accept()
     if (m_favoriteEdit->isDirty()) {
         m_favoriteEdit->write();
         m_settings->sync();
-        qApp->actions()->updateYellowPageAction()->activate(QAction::Trigger);
+        qApp->yellowPageManager()->update();
     }
 }
 
