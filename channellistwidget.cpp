@@ -550,6 +550,8 @@ void ChannelListWidget::addToFavorites(int score)
         matcher.expressions().append(&exp);
         matcher.saveExpressions();
 
+        qApp->yellowPageManager()->update();
+
         QString msg = QString("「%1」を%2に追加しました。")
             .arg(channel->name(true))
             .arg( score < 0 ? "NG" : "お気に入り" );
