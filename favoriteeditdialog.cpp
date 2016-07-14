@@ -1,6 +1,8 @@
 #include "favoriteeditdialog.h"
 #include "favoriteedit.h"
 #include "settings.h"
+#include "actions.h"
+#include "application.h"
 
 FavoriteEditDialog::FavoriteEditDialog(Settings *settings, QWidget *parent)
     : QDialog(parent), m_settings(settings)
@@ -25,8 +27,10 @@ FavoriteEditDialog::~FavoriteEditDialog()
 
 void FavoriteEditDialog::on_accept()
 {
-    if (m_favoriteEdit->isDirty())
+    if (m_favoriteEdit->isDirty()) {
         m_favoriteEdit->write();
-    m_settings->sync();
+        m_settings->sync();
+        qApp->actions()->updateYellowPageAction()->activate(QAction::Trigger);
+    }
 }
 
