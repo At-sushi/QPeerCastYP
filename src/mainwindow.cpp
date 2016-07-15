@@ -223,8 +223,6 @@ void MainWindow::setupToolBar()
 
     m_mainToolBar->addAction(m_actions->updateYellowPageToolBarAction());
     m_mainToolBar->addAction(m_actions->showFavoritesAction());
-    m_mainToolBar->addAction(m_actions->findChannelAction());
-    m_mainToolBar->addAction(m_actions->showSettingsAction());
     connect(m_mainToolBar, SIGNAL(orientationChanged(Qt::Orientation)),
             this, SLOT(toolBarOrientationChanged(Qt::Orientation)));
 }
