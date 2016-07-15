@@ -331,7 +331,6 @@ FavoriteEdit::FavoriteEdit(Settings *settings, QWidget *parent)
     widget->layout()->addWidget(m_listWidget);
     connect(m_listWidget, SIGNAL(changed(bool)), this, SLOT(setDirty(bool)));
     connect(addButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(addNewItem()));
-    connect(addGroupButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(addNewGroupItem()));
     connect(editButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(editCurrentItem()));
     connect(removeButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(removeSelectedItem()));
     connect(upButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(upCurrentItem()));
