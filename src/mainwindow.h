@@ -40,6 +40,9 @@ public:
     void activateWindow();
 #endif
 
+    void applicationActivate();
+    void applicationDeactivate();
+
 public slots:
     void notifyChannels(YellowPage *yellowPage = 0);
 

@@ -40,6 +40,8 @@ public:
 
     static Application *instance();
 
+    bool event(QEvent *pEvent);
+
 private:
     MainWindow *m_mainWindow;
     SystemTrayIcon *m_systemTrayIcon;
