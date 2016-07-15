@@ -243,3 +243,27 @@ void ChannelMatcher::saveExpressions(const QString &prefix, Expression *group)
     m_settings->endArray();
 }
 
+ChannelMatcher::Expression *ChannelMatcher::favoriteGroup()
+{
+    QList<ChannelMatcher::Expression *> &list = expressions();
+
+    if (list.size() >= 2 && list[0]->isGroup && list[1]->isGroup) {
+        return list[0];
+    } else {
+        qDebug() << "favorite group not found";
+        return rootGroup();
+    }
+}
+
+ChannelMatcher::Expression *ChannelMatcher::ngGroup()
+{
+    QList<ChannelMatcher::Expression *> &list = expressions();
+
+    if (list.size() >= 2 && list[0]->isGroup && list[1]->isGroup) {
+        return list[1];
+    } else {
+        qDebug() << "NG group not found";
+        return rootGroup();
+    }
+}
+

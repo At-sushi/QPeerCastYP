@@ -567,10 +567,8 @@ void ChannelListWidget::addToFavorites(int score)
         qApp->systemTrayIcon()->showMessage("お知らせ", msg);
     } else {
         FavoriteEditDialog dialog(qApp->settings(), this);
-        Expression *parent = findGroup(isFavorite, *dialog.favoriteEdit()->matcher());
 
-        dialog.favoriteEdit()->matcher()
-            ->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score, parent);
+        dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
         dialog.exec();
     }
 }

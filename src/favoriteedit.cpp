@@ -108,7 +108,7 @@ void ExpressionListWidget::clear()
 
 void ExpressionListWidget::upCurrentItem()
 {
-    if (!currentItem())
+    if (!currentItem() or static_cast<ExpressionListWidgetItem *>(currentItem())->expression()->isGroup)
         return;
     QTreeWidgetItem *current = currentItem();
     QTreeWidgetItem *parent = current->parent();
@@ -128,7 +128,7 @@ void ExpressionListWidget::upCurrentItem()
 
 void ExpressionListWidget::downCurrentItem()
 {
-    if (!currentItem())
+    if (!currentItem() or static_cast<ExpressionListWidgetItem *>(currentItem())->expression()->isGroup)
         return;
     QTreeWidgetItem *current = currentItem();
     QTreeWidgetItem *parent = current->parent();
@@ -163,8 +163,13 @@ void ExpressionListWidget::addNewItem(ChannelMatcher::Expression *exp)
         exp = new ChannelMatcher::Expression(m_matcher->rootGroup());
     ExpressionDialog dialog(exp, this);
     if (dialog.exec() == QDialog::Accepted) {
-        new ExpressionListWidgetItem(this, exp);
-        m_matcher->expressions().append(exp);
+        if (exp->point >= 0) {
+            m_matcher->favoriteGroup()->expressions.append(exp);
+            new ExpressionListWidgetItem(this->invisibleRootItem()->child(0), exp);
+        } else {
+            m_matcher->ngGroup()->expressions.append(exp);
+            new ExpressionListWidgetItem(this->invisibleRootItem()->child(1), exp);
+        }
         emit changed(true);
     } else {
         delete exp;
@@ -177,7 +182,6 @@ void ExpressionListWidget::addNewGroupItem()
     exp->isGroup = true;
     FavoriteGroupDialog dialog(exp, this);
     if (dialog.exec() == QDialog::Accepted) {
-        // これなにやっとん？
         new ExpressionListWidgetItem(this, exp);
         m_matcher->expressions().append(exp);
         setRootIsDecorated(true);
@@ -211,6 +215,9 @@ void ExpressionListWidget::editItem(QTreeWidgetItem *i)
 void ExpressionListWidget::removeSelectedItem()
 {
     foreach (QTreeWidgetItem *i, selectedItems()) {
+        if (static_cast<ExpressionListWidgetItem *>(i)->expression()->isGroup) {
+            continue;
+        }
         QTreeWidgetItem *parent = i->parent();
         if (!parent)
             parent = invisibleRootItem();
@@ -325,7 +332,7 @@ FavoriteEdit::FavoriteEdit(Settings *settings, QWidget *parent)
     setupUi(this);
     m_matcher = new ChannelMatcher(settings);
     m_listWidget = new ExpressionListWidget(m_matcher, this);
-    m_listWidget->setDragDropMode(QAbstractItemView::InternalMove);
+    m_listWidget->setDragEnabled(false);
     m_listWidget->setSelectionMode(QAbstractItemView::ExtendedSelection);
     m_listWidget->setAllColumnsShowFocus(true);
     m_listWidget->setFocus();

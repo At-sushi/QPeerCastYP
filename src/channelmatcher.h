@@ -73,6 +73,9 @@ public:
     void loadExpressions();
     void saveExpressions();
 
+    Expression *favoriteGroup();
+    Expression *ngGroup();
+
 private:
     int score(Channel *channel, Expression *exp) const;
     void loadExpressions(const QString &prefix, Expression *exp);
