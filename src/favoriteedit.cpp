@@ -177,6 +177,7 @@ void ExpressionListWidget::addNewGroupItem()
     exp->isGroup = true;
     FavoriteGroupDialog dialog(exp, this);
     if (dialog.exec() == QDialog::Accepted) {
+        // これなにやっとん？
         new ExpressionListWidgetItem(this, exp);
         m_matcher->expressions().append(exp);
         setRootIsDecorated(true);

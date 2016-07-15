@@ -9,6 +9,12 @@
  */
 #include "settingsconverter.h"
 #include "settings.h"
+#include "channelmatcher.h"
+
+static bool isTwoWayFavorites(Settings *settings);
+static void convertToTwoWayFavorites(Settings *settings);
+static void collectNonGroupItems(QList<ChannelMatcher::Expression *>& items, ChannelMatcher::Expression* group);
+static ChannelMatcher::Expression* addTopLevelGroup(ChannelMatcher& matcher, QString name);
 
 void SettingsConverter::convert(Settings *settings)
 {
@@ -16,6 +22,11 @@ void SettingsConverter::convert(Settings *settings)
         convertToV030(settings);
     if ("0.5.0" > settings->value("General/Version").toString())
         convertToV050(settings);
+
+    if (!isTwoWayFavorites(settings)) {
+        convertToTwoWayFavorites(settings);
+    }
+
     settings->sync();
 }
 
@@ -84,3 +95,57 @@ void SettingsConverter::convertToV050(Settings *settings)
     settings->remove("Player/SoundTypes");
 }
 
+static bool isTwoWayFavorites(Settings *settings)
+{
+    ChannelMatcher matcher(settings);
+
+    QList<ChannelMatcher::Expression *> &list = matcher.rootGroup()->expressions;
+
+    return list.size() == 2 && list[0]->isGroup && list[1]->isGroup;
+}
+
+static void collectNonGroupItems(QList<ChannelMatcher::Expression *>& items, ChannelMatcher::Expression* group)
+{
+    Q_ASSERT(group->isGroup);
+
+    foreach (ChannelMatcher::Expression *exp, group->expressions) {
+        if (exp->isGroup) {
+            collectNonGroupItems(items, exp);
+        } else {
+            items.append(exp);
+        }
+    }
+}
+
+static ChannelMatcher::Expression* addTopLevelGroup(ChannelMatcher& matcher, QString name)
+{
+    ChannelMatcher::Expression *exp = new ChannelMatcher::Expression(matcher.rootGroup());
+    exp->isGroup = true;
+    exp->pattern = name;
+    matcher.rootGroup()->expressions.append(exp);
+
+    return exp;
+}
+
+static void convertToTwoWayFavorites(Settings *settings)
+{
+    ChannelMatcher src(settings);
+    ChannelMatcher dst(settings);
+
+    QList<ChannelMatcher::Expression *> items;
+    collectNonGroupItems(items, src.rootGroup());
+
+    dst.clear();
+    ChannelMatcher::Expression *favGroup = addTopLevelGroup(dst, "お気に入り");
+    ChannelMatcher::Expression *ngGroup  = addTopLevelGroup(dst, "NG");
+
+    foreach (ChannelMatcher::Expression *exp, items) {
+        if (exp->point >= 0) {
+            favGroup->expressions.append(exp);
+        } else {
+            ngGroup->expressions.append(exp);
+        }
+    }
+    dst.saveExpressions();
+    settings->sync();
+}

@@ -531,32 +531,46 @@ void ChannelListWidget::playChannel(Channel *channel)
     qApp->actions()->playChannel(channel);
 }
 
+typedef ChannelMatcher::Expression Expression;
+
+Expression *findGroup(bool isFavorite, ChannelMatcher& matcher)
+{
+    QList<Expression *>& topNodes = matcher.expressions();
+
+    if (topNodes.size() >= 2 && topNodes[isFavorite ? 0 : 1]->isGroup) {
+        return topNodes[isFavorite ? 0 : 1];
+    } else {
+        qDebug() << "Warning: Favorite/NG group not found. Adding to top level.";
+        return matcher.rootGroup();
+    }
+}
+
 void ChannelListWidget::addToFavorites(int score)
 {
     Channel *channel = currentChannel();
+    bool isFavorite = score >= 0;
 
     if (!channel) return;
 
     if (qApp->settings()->value("ChannelListWidget/AddToFavoritesQuietly").toBool()) {
         ChannelMatcher matcher(qApp->settings());
+        Expression *parent = findGroup(isFavorite, matcher);
 
-        ChannelMatcher::Expression exp;
-        exp.pattern = channel->name(true);
-        exp.matchFlags = Qt::MatchStartsWith;
-        exp.targetFlags = ChannelMatcher::Name;
-        exp.point = score;
-        matcher.expressions().append(&exp);
+        matcher.addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score, parent);
         matcher.saveExpressions();
 
         qApp->yellowPageManager()->update();
 
         QString msg = QString("「%1」を%2に追加しました。")
             .arg(channel->name(true))
-            .arg( score < 0 ? "NG" : "お気に入り" );
+            .arg(isFavorite ? "お気に入り" : "NG");
         qApp->systemTrayIcon()->showMessage("お知らせ", msg);
     } else {
         FavoriteEditDialog dialog(qApp->settings(), this);
-        dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
+        Expression *parent = findGroup(isFavorite, *dialog.favoriteEdit()->matcher());
+
+        dialog.favoriteEdit()->matcher()
+            ->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score, parent);
         dialog.exec();
     }
 }

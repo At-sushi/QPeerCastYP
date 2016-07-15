@@ -29,6 +29,7 @@ public:
     void addExpression(const QString &pattern, Qt::MatchFlags matchFlags, ChannelMatcher::TargetFlags targetFlags, int point);
     void write();
     void setValue(bool reset = false);
+    ChannelMatcher *matcher() const { return m_matcher; };
 
 private:
     Settings *m_settings;
