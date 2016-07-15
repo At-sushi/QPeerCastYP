@@ -12,6 +12,7 @@
 #include "channelmatcher.h"
 #include "expressiondialog.h"
 #include "favoritegroupdialog.h"
+#include "settings.h"
 
 class ExpressionListWidgetItem : public QTreeWidgetItem
 {
@@ -324,6 +325,33 @@ void ExpressionListWidget::saveExpressions(QTreeWidgetItem *item)
     }
 }
 
+QString ExpressionListWidget::saveTreeState()
+{
+    QTreeWidgetItemIterator it(this, QTreeWidgetItemIterator::HasChildren);
+    QString state;
+
+    while (*it) {
+        if ((*it)->childCount() > 0) {
+            state += (*it)->isExpanded() ? 'E' : 'C';
+        }
+        ++it;
+    }
+    return state;
+}
+
+void ExpressionListWidget::restoreTreeState(QString state)
+{
+    QTreeWidgetItemIterator it(this, QTreeWidgetItemIterator::HasChildren);
+    int i = 0;
+
+    while (*it && i < state.length()) {
+        if ((*it)->childCount() > 0) {
+            (*it)->setExpanded(state[i++] == 'E');
+        }
+        ++it;
+    }
+}
+
 //-------------------------------------------------------------------------------------------------
 
 FavoriteEdit::FavoriteEdit(Settings *settings, QWidget *parent)
@@ -347,15 +375,18 @@ FavoriteEdit::FavoriteEdit(Settings *settings, QWidget *parent)
 
 FavoriteEdit::~FavoriteEdit()
 {
+    m_settings->setValue("General/FavoriteEditTreeState", m_listWidget->saveTreeState());
     delete m_matcher;
 }
 
 void FavoriteEdit::setValue(bool reset)
 {
-    if (reset)
+    if (reset) {
         m_listWidget->clear();
-    else
+    } else {
         m_listWidget->addItems();
+        m_listWidget->restoreTreeState(m_settings->value("General/FavoriteEditTreeState").toString());
+    }
 }
 
 void FavoriteEdit::addExpression(const QString &pattern, Qt::MatchFlags matchFlags, ChannelMatcher::TargetFlags targetFlags, int point)

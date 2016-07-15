@@ -50,6 +50,9 @@ public:
     void saveExpressions();
     void saveExpressions(QTreeWidgetItem *item);
 
+    void restoreTreeState(QString state);
+    QString saveTreeState();
+
 public slots:
     void clear();
     void upCurrentItem();
