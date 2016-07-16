@@ -369,8 +369,6 @@ FavoriteEdit::FavoriteEdit(Settings *settings, QWidget *parent)
     connect(addButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(addNewItem()));
     connect(editButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(editCurrentItem()));
     connect(removeButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(removeSelectedItem()));
-    connect(upButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(upCurrentItem()));
-    connect(downButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(downCurrentItem()));
 }
 
 FavoriteEdit::~FavoriteEdit()
