@@ -66,6 +66,8 @@ public slots:
 
 private slots:
     void updateYellowPageActionChanged();
+    void contextMenuAboutToShow();
+    void contextMenuAboutToHide();
 
 private:
     MainWindow *m_mainWindow;
