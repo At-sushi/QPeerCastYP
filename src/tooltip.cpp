@@ -15,7 +15,10 @@ ToolTip::ToolTip(QWidget *parent)
     : QLabel(parent, Qt::ToolTip), m_widget(0)
 {
     setAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    setPalette(QToolTip::palette());
+    QPalette src(QToolTip::palette()), dst(QLabel::palette());
+    dst.setColor(QPalette::Window, src.color(QPalette::ToolTipBase));
+    dst.setColor(QPalette::WindowText, src.color(QPalette::ToolTipText));
+    setPalette(dst);
     setFont(QToolTip::font());
     setWordWrap(true);
     setContentsMargins(3, 1, 3, 1);
