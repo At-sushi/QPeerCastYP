@@ -78,6 +78,7 @@ void MainWindow::setupChannelListWidget()
     YellowPage *manager = qApp->yellowPageManager();
     m_mergedChannelList = new ChannelListWidget(m_channelListTabWidget, manager);
     m_mergedChannelList->setAttribute(Qt::WA_MacShowFocusRect, false);
+    m_mergedChannelList->setSaveHeaderStateOnDestruction(true);
     m_channelListTabWidget->addTab(m_mergedChannelList, manager->name());
     m_mergedChannelList->setActive(true);
     connect(m_channelListFindBar, SIGNAL(findRequest(QString, Qt::MatchFlags)),

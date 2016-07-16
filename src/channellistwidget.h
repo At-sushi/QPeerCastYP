@@ -69,6 +69,9 @@ public:
     void setMinimumScore(int score);
     int minimumScore();
 
+    void setSaveHeaderStateOnDestruction(bool flag);
+    bool saveHeaderStateOnDestruction();
+
 public slots:
     void updateYellowPage();
     void updateItems();
@@ -126,6 +129,7 @@ private:
     int m_minimumItemHeight;
     QList<int> m_sortOrder;
     int m_minimumScore;
+    bool m_saveHeaderStateOnDestruction;
 };
 
 #endif // CHANNELLISTWIDGET_H

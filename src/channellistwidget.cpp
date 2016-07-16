@@ -224,7 +224,7 @@ private:
 };
 
 ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
-    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX)
+    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX), m_saveHeaderStateOnDestruction(false)
 {
     setAutoScroll(false);
     setYellowPage(yellowPage);
@@ -276,7 +276,7 @@ ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
 
 ChannelListWidget::~ChannelListWidget()
 {
-    if (m_yellowPage->isManager() && m_minimumScore == INT_MAX) {
+    if (saveHeaderStateOnDestruction()) {
         QByteArray state = header()->saveState();
         qApp->settings()->setValue("ChannelListWidget/HeaderState", state);
     }
@@ -917,3 +917,12 @@ int ChannelListWidget::minimumScore()
     return m_minimumScore;
 }
 
+void ChannelListWidget::setSaveHeaderStateOnDestruction(bool flag)
+{
+    m_saveHeaderStateOnDestruction = flag;
+}
+
+bool ChannelListWidget::saveHeaderStateOnDestruction()
+{
+    return m_saveHeaderStateOnDestruction;
+}
