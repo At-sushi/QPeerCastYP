@@ -276,7 +276,6 @@ void MainWindow::writeSettings()
     settings->setValue("MainWindow/ShowStatusBar", m_actions->showStatusBarAction()->isChecked());
     settings->setValue("MainWindow/ShowMainToolBar", m_actions->showToolBarAction()->isChecked());
     settings->setValue("MainWindow/ShowTabBar", m_actions->showTabBarAction()->isChecked());
-    settings->sync();
 }
 
 Actions *MainWindow::actions() const

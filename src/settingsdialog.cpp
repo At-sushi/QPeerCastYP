@@ -114,7 +114,6 @@ void SettingsDialog::accept()
         m_userActionEdit->write();
     if (m_networkWidget->isDirty())
         m_networkWidget->write();
-    m_settings->sync();
     QDialog::accept();
 }
 

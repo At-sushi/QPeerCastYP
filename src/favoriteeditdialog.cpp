@@ -29,7 +29,6 @@ void FavoriteEditDialog::on_accept()
 {
     if (m_favoriteEdit->isDirty()) {
         m_favoriteEdit->write();
-        m_settings->sync();
         qApp->yellowPageManager()->update();
     }
 }

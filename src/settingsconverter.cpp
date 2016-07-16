@@ -26,8 +26,6 @@ void SettingsConverter::convert(Settings *settings)
     if (!isTwoWayFavorites(settings)) {
         convertToTwoWayFavorites(settings);
     }
-
-    settings->sync();
 }
 
 void SettingsConverter::convertToV030(Settings *settings)
@@ -147,5 +145,4 @@ static void convertToTwoWayFavorites(Settings *settings)
         }
     }
     dst.saveExpressions();
-    settings->sync();
 }
