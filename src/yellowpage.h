@@ -58,6 +58,8 @@ public:
 
     static QString typeString(Type type);
 
+    void setProxy(QString host, int port);
+
 signals:
     void updateDone(YellowPage *yellowPage, bool error);
     void channelListChanged();

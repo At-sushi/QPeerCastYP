@@ -106,6 +106,11 @@ void YellowPageManager::loadYellowPages()
 {
     if (!m_settings)
         return;
+
+    bool useProxy = m_settings->value("Network/UseHttpProxy").toBool();
+    QString proxyHost = m_settings->value("Network/HttpProxyHost").toString();
+    int proxyPort = m_settings->value("Network/HttpProxyPort").toInt();
+
     int size = m_settings->beginReadArray("YellowPage/Items");
     for (int i = 0; i < size; ++i) {
         m_settings->setArrayIndex(i);
@@ -114,6 +119,8 @@ void YellowPageManager::loadYellowPages()
         yp->setName(m_settings->value("Name").toString());
         yp->setType((YellowPage::Type)m_settings->value("Type").toInt());
         yp->setNameSpaces(m_settings->value("NameSpaces").toStringList());
+        if (useProxy)
+            yp->setProxy(proxyHost, proxyPort);
         addYellowPage(yp);
     }
     m_settings->endArray();

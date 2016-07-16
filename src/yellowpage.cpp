@@ -76,8 +76,12 @@ void YellowPage::timeout()
 
 void YellowPage::done(bool error)
 {
-    m_httpTimer.stop();
     QHttpResponseHeader response = m_http->lastResponse();
+
+    // HTTP プロキシが設定されている場合は終わってないのにここに来ることがある。
+    if (!response.isValid()) return;
+
+    m_httpTimer.stop();
     qDebug() << m_name << "status code:" << response.statusCode();
     if (response.statusCode() == 200 and !error) {
         ChannelList oldChannels = m_channels;
@@ -300,6 +304,11 @@ QString YellowPage::typeString(Type type)
     default:
         return QString();
     }
+}
+
+void YellowPage::setProxy(QString host, int port)
+{
+    m_http->setProxy(host, port);
 }
 
 QDebug operator<<(QDebug dbg, const YellowPage &y)

@@ -32,6 +32,10 @@ void NetworkWidget::setValue(bool reset)
     peerCastServerPortSpinBox->setValue(pcUrl.port());
     runPeerCastAtStartupCheckBox->setChecked(settings->value("AtStartup/RunPeerCast").toBool());
     peerCastProgramEdit->setText(settings->value("Program/PeerCast").toString());
+
+    useHttpProxyCheckBox->setChecked(settings->value("Network/UseHttpProxy").toBool());
+    httpProxyHostEdit->setText(settings->value("Network/HttpProxyHost").toString());
+    httpProxyPortSpinBox->setValue(settings->value("Network/HttpProxyPort").toInt());
 }
 
 void NetworkWidget::write()
@@ -41,6 +45,9 @@ void NetworkWidget::write()
             .arg(peerCastServerHostEdit->text()).arg(peerCastServerPortSpinBox->value()));
     m_settings->setValue("AtStartup/RunPeerCast", runPeerCastAtStartupCheckBox->isChecked());
     m_settings->setValue("Program/PeerCast", peerCastProgramEdit->text());
+    m_settings->setValue("Network/UseHttpProxy", useHttpProxyCheckBox->isChecked());
+    m_settings->setValue("Network/HttpProxyHost", httpProxyHostEdit->text());
+    m_settings->setValue("Network/HttpProxyPort", httpProxyPortSpinBox->value());
 }
 
 void NetworkWidget::on_selectPeerCastProgramButton_clicked()
