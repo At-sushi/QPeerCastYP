@@ -67,7 +67,7 @@ Actions::Actions(MainWindow *mainWindow)
     m_mainWindow->addAction(m_addToNGAction);
     connect(m_addToNGAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(addToNG()));
 
-    m_openContactUrlAction = new QAction(QIcon(":/images/browser.png"), tr("コンタクトURLを開く(&W)"), this);
+    m_openContactUrlAction = new QAction(QIcon(":/images/browser.png"), tr("コンタクトURLをウェブ・ブラウザで開く(&W)"), this);
     m_openContactUrlAction->setIconText(tr("コンタクト"));
     m_openContactUrlAction->setShortcut(QKeySequence("Ctrl+Return"));
     m_mainWindow->addAction(m_openContactUrlAction);
@@ -220,7 +220,6 @@ QMenu *Actions::channelContextMenu(QWidget *parent) const
     }
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
-    menu->addAction(m_addToFavoritesAction->icon(), m_addToFavoritesAction->text());
     menu->addAction(m_addToNGAction);
     menu->addSeparator();
     menu->addAction(m_copyChannelInfoAction);
