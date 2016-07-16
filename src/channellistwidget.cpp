@@ -276,7 +276,7 @@ ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
 
 ChannelListWidget::~ChannelListWidget()
 {
-    if (m_yellowPage->isManager()) {
+    if (m_yellowPage->isManager() && m_minimumScore == INT_MAX) {
         QByteArray state = header()->saveState();
         qApp->settings()->setValue("ChannelListWidget/HeaderState", state);
     }
