@@ -9,9 +9,6 @@ FavoriteEditDialog::FavoriteEditDialog(Settings *settings, QWidget *parent)
 {
     setupUi(this);
 
-    connect(buttonBox, SIGNAL(accepted()), this, SLOT(on_accept()));
-    // connect(buttonBox, SIGNAL(rejected()), this, SLOT(on_reject()));
-
     m_favoriteEdit = new FavoriteEdit(settings, this);
     m_favoriteEdit->setValue();
     verticalLayout->insertWidget(0, m_favoriteEdit);
@@ -25,11 +22,12 @@ FavoriteEditDialog::~FavoriteEditDialog()
     delete m_favoriteEdit;
 }
 
-void FavoriteEditDialog::on_accept()
+void FavoriteEditDialog::accept()
 {
     if (m_favoriteEdit->isDirty()) {
         m_favoriteEdit->write();
         qApp->yellowPageManager()->update();
     }
+    QDialog::accept();
 }
 

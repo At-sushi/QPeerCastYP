@@ -15,7 +15,7 @@ public:
     FavoriteEdit *favoriteEdit() const { return m_favoriteEdit; };
 
 public slots:
-    void on_accept();
+    void accept();
 
 private:
     FavoriteEdit *m_favoriteEdit;
