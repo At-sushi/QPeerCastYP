@@ -80,8 +80,7 @@ void GeneralWidget::write()
     m_settings->setValue("Program/UseCommonWebBrowser",
             useCommonWebBrowserRadioButton->isChecked());
     m_settings->setValue("Program/WebBrowser", webBrowserEdit->text());
-    m_settings->setValue("ChannelListWidget/Font",
-            m_font);
+    m_settings->setValue("ChannelListWidget/Font", m_font.toString());
 }
 
 void GeneralWidget::on_selectWebBrowserButton_clicked()
