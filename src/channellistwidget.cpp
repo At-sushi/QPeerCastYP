@@ -598,6 +598,8 @@ void ChannelListWidget::unfavorite()
         matcher.saveExpressions();
         qApp->yellowPageManager()->update();
         qApp->systemTrayIcon()->showMessage(tr("お知らせ"), tr("「%1」をお気に入り解除しました。").arg(channel->name(true)));
+    } else {
+        qApp->systemTrayIcon()->showMessage(tr("エラー"), tr("エントリー「%1」が見付かりませんでした。").arg(channel->name(true)));
     }
 }
 
