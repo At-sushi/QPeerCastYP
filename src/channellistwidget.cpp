@@ -465,8 +465,10 @@ void ChannelListWidget::updateActions()
     Channel *channel = currentChannel();
     bool enabled = (bool)channel;
     actions->playChannelAction()->setEnabled(enabled ? channel->isPlayable() : false);
-    actions->addToFavoritesAction()->setEnabled(enabled);
-    actions->unfavoriteAction()->setEnabled(enabled && channel->isFavorite());
+
+    actions->addToFavoritesAction()->setVisible(enabled && !channel->isFavoriteBroadcaster());
+    actions->unfavoriteAction()->setVisible(enabled && channel->isFavoriteBroadcaster());
+
     actions->addToNGAction()->setEnabled(enabled);
     actions->copyChannelInfoAction()->setEnabled(enabled);
     actions->copyStreamUrlAction()->setEnabled(enabled);

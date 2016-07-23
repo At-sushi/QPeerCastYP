@@ -283,3 +283,19 @@ ChannelMatcher::Expression *ChannelMatcher::ngGroup()
     }
 }
 
+QList<ChannelMatcher::Expression *> ChannelMatcher::collectExpressions(Expression::IPredicate *pred, Expression *group)
+{
+    QList<Expression *> ls;
+
+    if (!group) group = m_rootGroup;
+
+    foreach (Expression *exp, group->expressions) {
+        if (exp->isGroup) {
+            ls += collectExpressions(pred, exp);
+        }
+        if ((*pred)(exp)) {
+            ls << exp;
+        }
+    }
+    return ls;
+}

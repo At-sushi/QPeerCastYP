@@ -44,6 +44,7 @@ public:
     void setStatus(Status status);
 
     bool isFavorite() const;
+    bool isFavoriteBroadcaster() const;
 
     QString name(bool removeStatus = false) const;
     void setName(const QString &name);

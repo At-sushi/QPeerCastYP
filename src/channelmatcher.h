@@ -84,6 +84,7 @@ public:
     Expression *ngGroup();
 
     bool removeExpression(Expression::IPredicate *pred, Expression *group);
+    QList<Expression *> collectExpressions(Expression::IPredicate *pred, Expression *group);
 
 private:
     int score(Channel *channel, Expression *exp) const;

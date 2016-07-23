@@ -11,6 +11,7 @@
 #include "application.h"
 #include "settings.h"
 #include "yellowpage.h"
+#include "channelmatcher.h"
 
 Channel::Channel(const QString &name, YellowPage *yellowPage)
     : QObject(yellowPage), m_yellowPage(yellowPage)
@@ -87,6 +88,25 @@ void Channel::setStatus(Status status)
 bool Channel::isFavorite() const
 {
     return status() & Favorite;
+}
+
+bool Channel::isFavoriteBroadcaster() const
+{
+    ChannelMatcher matcher(qApp->settings());
+
+    class Predicate : public ChannelMatcher::Expression::IPredicate
+    {
+    public:
+        Predicate(QString name) : m_name(name) {}
+        bool operator()(ChannelMatcher::Expression * exp)
+            {
+                return !exp->isGroup && (exp->targetFlags | ChannelMatcher::Name) && exp->pattern == m_name;
+            }
+        QString m_name;
+    };
+    Predicate pred(name(true));
+    QList<ChannelMatcher::Expression *> matches = matcher.collectExpressions(&pred, matcher.favoriteGroup());
+    return matches.size() > 0;
 }
 
 QString Channel::longDescription() const
