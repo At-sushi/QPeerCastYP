@@ -21,9 +21,6 @@ GeneralWidget::GeneralWidget(Settings *settings, QWidget *parent)
     QCompleter *completer = new QCompleter(this);
     completer->setModel(new QDirModel(completer));
     webBrowserEdit->setCompleter(completer);
-
-    linkTypeComboBox->addItem(tr("チャンネルを再生"), (int)ChannelListWidget::ChannelLink);
-    linkTypeComboBox->addItem(tr("コンタクトURLを開く"), (int)ChannelListWidget::ContactLink);
 }
 
 GeneralWidget::~GeneralWidget()
@@ -43,10 +40,6 @@ void GeneralWidget::setValue(bool reset)
             settings->value("General/AutoUpdateInterval").toInt() / 60);
     customToolTipCheckBox->setChecked(
             settings->value("ChannelListWidget/CustomToolTip").toBool());
-    linkEnabledCheckBox->setChecked(
-            settings->value("ChannelListWidget/LinkEnabled").toBool());
-    linkTypeComboBox->setCurrentIndex(linkTypeComboBox->findData(
-            settings->value("ChannelListWidget/LinkType").toBool()));
     addToFavoritesQuietlyCheckBox->setChecked(
             settings->value("ChannelListWidget/AddToFavoritesQuietly").toBool());
     showSystemTrayIconCheckBox->setChecked(
@@ -69,10 +62,6 @@ void GeneralWidget::write()
             autoUpdateIntervalSpinBox->value() * 60);
     m_settings->setValue("ChannelListWidget/CustomToolTip",
             customToolTipCheckBox->isChecked());
-    m_settings->setValue("ChannelListWidget/LinkEnabled",
-            linkEnabledCheckBox->isChecked());
-    m_settings->setValue("ChannelListWidget/LinkType",
-            linkTypeComboBox->itemData(linkTypeComboBox->currentIndex()));
     m_settings->setValue("ChannelListWidget/AddToFavoritesQuietly",
             addToFavoritesQuietlyCheckBox->isChecked());
     m_settings->setValue("SystemTrayIcon/Enabled",
