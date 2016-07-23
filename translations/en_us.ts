@@ -163,47 +163,51 @@
         <translation>About &amp;Qt</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="169"/>
+        <location filename="../src/actions.cpp" line="154"/>
         <source>ファイル(&amp;F)</source>
         <translation>&amp;File</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="176"/>
+        <location filename="../src/actions.cpp" line="161"/>
         <source>イエローページ(&amp;Y)</source>
         <translation>&amp;Yellow Pages</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="186"/>
+        <location filename="../src/actions.cpp" line="171"/>
         <source>チャンネル(&amp;C)</source>
         <translation>&amp;Channel</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="267"/>
+        <location filename="../src/actions.cpp" line="242"/>
         <source>設定(&amp;S)</source>
         <translation>&amp;Settings</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="283"/>
+        <location filename="../src/actions.cpp" line="258"/>
         <source>ヘルプ(&amp;H)</source>
         <translation>&amp;Help</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="292"/>
+        <location filename="../src/actions.cpp" line="267"/>
         <source>このチャンネルは再生できません。</source>
         <translation>This channel is not playable.</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="309"/>
-        <source>%1 用のプレイヤが設定されていません。</source>
+        <location filename="../src/actions.cpp" line="284"/>
+        <source>%1 用のプレイヤーが設定されていません。</source>
         <translation>No player is associated for %1 streams.</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="334"/>
+        <source>%1 用のプレイヤが設定されていません。</source>
+        <translation type="obsolete">No player is associated for %1 streams.</translation>
+    </message>
+    <message>
+        <location filename="../src/actions.cpp" line="309"/>
         <source>エラー</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/actions.cpp" line="334"/>
+        <location filename="../src/actions.cpp" line="309"/>
         <source>プログラムの実行に失敗しました。</source>
         <translation>Failed to run the program.</translation>
     </message>
@@ -211,17 +215,17 @@
 <context>
     <name>Application</name>
     <message>
-        <location filename="../src/application.cpp" line="118"/>
+        <location filename="../src/application.cpp" line="114"/>
         <source>エラー</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location filename="../src/application.cpp" line="118"/>
+        <location filename="../src/application.cpp" line="114"/>
         <source>PeerCast の起動に失敗しました。</source>
         <translation>Failed to start PeerCast.</translation>
     </message>
     <message>
-        <location filename="../src/application.cpp" line="120"/>
+        <location filename="../src/application.cpp" line="116"/>
         <source>PeerCast プログラムが設定されていません。</source>
         <translation>The PeerCast program is not set.</translation>
     </message>
@@ -607,7 +611,7 @@ QRegExp: %1</translation>
     </message>
     <message>
         <location filename="../src/generalwidget.ui" line="75"/>
-        <location filename="../src/generalwidget.ui" line="289"/>
+        <location filename="../src/generalwidget.ui" line="245"/>
         <source>選択...</source>
         <translation>Select...</translation>
     </message>
@@ -637,57 +641,53 @@ QRegExp: %1</translation>
         <translation>Use custom tool tips</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="183"/>
         <source>配信者をリンクとして表示</source>
-        <translation>Hyperlink broadcasters</translation>
+        <translation type="obsolete">Hyperlink broadcasters</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="195"/>
         <source>クリック時の動作</source>
-        <translation>On click</translation>
+        <translation type="obsolete">On click</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="227"/>
+        <location filename="../src/generalwidget.ui" line="183"/>
         <source>ダイアログなしでお気に入り/NGに追加する</source>
         <translation>Add to favorites quietly</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="237"/>
+        <location filename="../src/generalwidget.ui" line="193"/>
         <source>システムトレイ／通知エリア</source>
         <translation>System Tray/Notification Area</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="246"/>
+        <location filename="../src/generalwidget.ui" line="202"/>
         <source>アイコンを表示する</source>
         <translation>Show an icon</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="256"/>
+        <location filename="../src/generalwidget.ui" line="212"/>
         <source>ウェブ・ブラウザ</source>
         <translation>Web Browser</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="265"/>
+        <location filename="../src/generalwidget.ui" line="221"/>
         <source>デスクトップ環境の既定</source>
-        <translation type="unfinished">Default</translation>
+        <translation>Default</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.ui" line="272"/>
+        <location filename="../src/generalwidget.ui" line="228"/>
         <source>その他</source>
         <translation>Other</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.cpp" line="25"/>
         <source>チャンネルを再生</source>
-        <translation>Play Channel</translation>
+        <translation type="obsolete">Play Channel</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.cpp" line="26"/>
         <source>コンタクトURLを開く</source>
-        <translation>Open Contact URL</translation>
+        <translation type="obsolete">Open Contact URL</translation>
     </message>
     <message>
-        <location filename="../src/generalwidget.cpp" line="91"/>
+        <location filename="../src/generalwidget.cpp" line="80"/>
         <source>プログラムを選択</source>
         <translation>Select Program</translation>
     </message>
@@ -710,7 +710,7 @@ QRegExp: %1</translation>
         <translation>Channel %1 | Viewers %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="546"/>
         <source>バージョン %1</source>
         <translation>version %1</translation>
     </message>
@@ -875,8 +875,12 @@ QRegExp: %1</translation>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/playeredit.ui" line="26"/>
         <source>プレイヤ1</source>
+        <translation type="obsolete">Player 1</translation>
+    </message>
+    <message>
+        <location filename="../src/playeredit.ui" line="26"/>
+        <source>プレイヤー１</source>
         <translation>Player 1</translation>
     </message>
     <message>
@@ -905,8 +909,12 @@ QRegExp: %1</translation>
     </message>
     <message>
         <location filename="../src/playeredit.ui" line="103"/>
-        <source>プレイヤ2</source>
+        <source>プレイヤー２</source>
         <translation>Player 2</translation>
+    </message>
+    <message>
+        <source>プレイヤ2</source>
+        <translation type="obsolete">Player 2</translation>
     </message>
     <message>
         <location filename="../src/playeredit.ui" line="174"/>
@@ -921,7 +929,7 @@ QRegExp: %1</translation>
     <message>
         <location filename="../src/playeredit.cpp" line="23"/>
         <source>&lt;table cellspacing=6 width=100%&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL&lt;/td&gt;&lt;td&gt;ストリーム URL (HTTP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL(scheme)&lt;/td&gt;&lt;td&gt;ストリーム URL (スキームを指定)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$PLAYLIST_URL&lt;/td&gt;&lt;td&gt;プレイリスト URL&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$CHANNEL(property)&lt;/td&gt;&lt;td&gt;チャンネル情報&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
-        <translation></translation>
+        <translation type="unfinished">&lt;table cellspacing=6 width=100%&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL&lt;/td&gt;&lt;td&gt;Stream URL (HTTP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL(&lt;i&gt;scheme&lt;/i&gt;)&lt;/td&gt;&lt;td&gt;Stream URL (with the scheme specified)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$PLAYLIST_URL&lt;/td&gt;&lt;td&gt;Playlist  URL&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$CHANNEL(&lt;i&gt;property&lt;/i&gt;)&lt;/td&gt;&lt;td&gt;Channel property&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</translation>
     </message>
     <message>
         <location filename="../src/playeredit.cpp" line="104"/>
@@ -1015,37 +1023,40 @@ QRegExp: %1</translation>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="27"/>
+        <location filename="../src/settingsdialog.cpp" line="26"/>
         <source>全般</source>
         <translation>General</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="31"/>
+        <location filename="../src/settingsdialog.cpp" line="30"/>
         <source>イエローページ</source>
         <translation>Yellow Pages</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="35"/>
+        <location filename="../src/settingsdialog.cpp" line="34"/>
         <source>通知</source>
         <translation>Notification</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="39"/>
-        <source>プレイヤ</source>
+        <location filename="../src/settingsdialog.cpp" line="38"/>
+        <source>プレイヤー</source>
         <translation>Players</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="43"/>
-        <source>アクション</source>
-        <translation>Actions</translation>
+        <source>プレイヤ</source>
+        <translation type="obsolete">Players</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="47"/>
+        <source>アクション</source>
+        <translation type="obsolete">Actions</translation>
+    </message>
+    <message>
+        <location filename="../src/settingsdialog.cpp" line="42"/>
         <source>ネットワーク</source>
         <translation>Network</translation>
     </message>
     <message>
-        <location filename="../src/settingsdialog.cpp" line="62"/>
+        <location filename="../src/settingsdialog.cpp" line="57"/>
         <source>%1 の設定</source>
         <translation>Configure %1</translation>
     </message>
@@ -1061,52 +1072,31 @@ QRegExp: %1</translation>
 <context>
     <name>UserActionEdit</name>
     <message>
-        <location filename="../src/useractionedit.ui" line="13"/>
-        <source>Form</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/useractionedit.ui" line="54"/>
-        <source>↑</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/useractionedit.ui" line="76"/>
-        <source>↓</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/useractionedit.ui" line="90"/>
         <source>追加</source>
-        <translation>Add</translation>
+        <translation type="obsolete">Add</translation>
     </message>
     <message>
-        <location filename="../src/useractionedit.ui" line="97"/>
         <source>編集</source>
-        <translation>Edit</translation>
+        <translation type="obsolete">Edit</translation>
     </message>
     <message>
-        <location filename="../src/useractionedit.ui" line="104"/>
         <source>削除</source>
-        <translation>Remove</translation>
+        <translation type="obsolete">Remove</translation>
     </message>
 </context>
 <context>
     <name>UserActionListWidget</name>
     <message>
-        <location filename="../src/useractionedit.cpp" line="53"/>
         <source>名前</source>
-        <translation>Name</translation>
+        <translation type="obsolete">Name</translation>
     </message>
     <message>
-        <location filename="../src/useractionedit.cpp" line="54"/>
         <source>コマンド</source>
-        <translation>Command</translation>
+        <translation type="obsolete">Command</translation>
     </message>
     <message>
-        <location filename="../src/useractionedit.cpp" line="127"/>
         <source>unnamed</source>
-        <translation>Unnamed</translation>
+        <translation type="obsolete">Unnamed</translation>
     </message>
 </context>
 <context>
@@ -1203,32 +1193,22 @@ QRegExp: %1</translation>
 <context>
     <name>YellowPageEdit</name>
     <message>
-        <location filename="../src/yellowpageedit.ui" line="13"/>
+        <location filename="../src/yellowpageedit.ui" line="14"/>
         <source>YellowPageEdit</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../src/yellowpageedit.ui" line="54"/>
-        <source>↑</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/yellowpageedit.ui" line="76"/>
-        <source>↓</source>
-        <translation></translation>
-    </message>
-    <message>
-        <location filename="../src/yellowpageedit.ui" line="90"/>
+        <location filename="../src/yellowpageedit.ui" line="34"/>
         <source>追加</source>
         <translation>Add</translation>
     </message>
     <message>
-        <location filename="../src/yellowpageedit.ui" line="97"/>
+        <location filename="../src/yellowpageedit.ui" line="41"/>
         <source>編集</source>
         <translation>Edit</translation>
     </message>
     <message>
-        <location filename="../src/yellowpageedit.ui" line="104"/>
+        <location filename="../src/yellowpageedit.ui" line="48"/>
         <source>削除</source>
         <translation>Remove</translation>
     </message>
