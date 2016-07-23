@@ -12,7 +12,6 @@
 #include "mainwindow.h"
 #include "channellistwidget.h"
 #include "channel.h"
-#include "useractions.h"
 #include "commandaction.h"
 #include "process.h"
 #include "settings.h"
