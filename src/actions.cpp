@@ -306,7 +306,7 @@ void Actions::playChannel(Channel *channel)
     }
     s->endArray();
     m_mainWindow->showErrorMessage(
-            tr("%1 用のプレイヤが設定されていません。").arg(channel->type().toUpper()));
+            tr("%1 用のプレイヤーが設定されていません。").arg(channel->type().toUpper()));
     return;
 }
 

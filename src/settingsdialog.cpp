@@ -36,7 +36,7 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
 
     m_playerEdit = new PlayerEdit(settings, m_tabWidget);
     m_playerEdit->setValue();
-    m_tabWidget->insertTab(Player, m_playerEdit, tr("プレイヤ"));
+    m_tabWidget->insertTab(Player, m_playerEdit, tr("プレイヤー"));
 
     m_userActionEdit = new UserActionEdit(settings, m_tabWidget);
     m_userActionEdit->setValue();

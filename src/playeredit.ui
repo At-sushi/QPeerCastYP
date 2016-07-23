@@ -23,7 +23,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>プレイヤ1</string>
+      <string>プレイヤー１</string>
      </property>
      <property name="flat">
       <bool>false</bool>
@@ -100,7 +100,7 @@
       </sizepolicy>
      </property>
      <property name="title">
-      <string>プレイヤ2</string>
+      <string>プレイヤー２</string>
      </property>
      <property name="flat">
       <bool>false</bool>

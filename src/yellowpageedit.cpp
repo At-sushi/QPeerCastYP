@@ -217,8 +217,6 @@ YellowPageEdit::YellowPageEdit(Settings *settings, QWidget *parent)
     connect(addButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(addNewItem()));
     connect(editButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(editCurrentItem()));
     connect(removeButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(removeCurrentItem()));
-    connect(upButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(upCurrentItem()));
-    connect(downButton, SIGNAL(clicked(bool)), m_listWidget, SLOT(downCurrentItem()));
 }
 
 YellowPageEdit::~YellowPageEdit()
