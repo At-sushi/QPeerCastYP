@@ -20,7 +20,7 @@ bool ChannelListFindBarEventFilter::eventFilter(QObject *watched, QEvent *event)
         QKeyEvent *ke = static_cast<QKeyEvent *>(event);
         int key = ke->key();
         if (key == Qt::Key_Escape)
-            findBar->closeButton->click();
+            findBar->clearButton->click();
         if (key == Qt::Key_Up or key == Qt::Key_Down)
             qApp->mainWindow()->currentChannelListWidget()->setFocus();
         return true;
@@ -32,7 +32,7 @@ ChannelListFindBar::ChannelListFindBar(QWidget *parent)
     : QWidget(parent)
 {
     setupUi(this);
-    closeButton->setIcon(QIcon(":/images/close.png").pixmap(16, 16));
+    clearButton->setIcon(QIcon(":/images/close.png").pixmap(16, 16));
     lineEdit->installEventFilter(new ViEmacsBindings(lineEdit, false));
     installEventFilter(new ChannelListFindBarEventFilter(this));
 }
@@ -48,7 +48,7 @@ void ChannelListFindBar::show()
     QWidget::show();
 }
 
-void ChannelListFindBar::on_closeButton_clicked()
+void ChannelListFindBar::on_clearButton_clicked()
 {
     lineEdit->setText("");
 }

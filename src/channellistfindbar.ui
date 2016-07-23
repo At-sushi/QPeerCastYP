@@ -21,22 +21,6 @@
     <number>1</number>
    </property>
    <item>
-    <widget class="QToolButton" name="closeButton">
-     <property name="text">
-      <string>X</string>
-     </property>
-     <property name="checkable">
-      <bool>false</bool>
-     </property>
-     <property name="toolButtonStyle">
-      <enum>Qt::ToolButtonIconOnly</enum>
-     </property>
-     <property name="autoRaise">
-      <bool>false</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QLabel" name="label">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
@@ -59,15 +43,34 @@
      </property>
      <property name="minimumSize">
       <size>
-       <width>200</width>
+       <width>130</width>
        <height>0</height>
       </size>
      </property>
      <property name="maximumSize">
       <size>
-       <width>200</width>
+       <width>130</width>
        <height>16777215</height>
       </size>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QToolButton" name="clearButton">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string>X</string>
+     </property>
+     <property name="checkable">
+      <bool>false</bool>
+     </property>
+     <property name="toolButtonStyle">
+      <enum>Qt::ToolButtonIconOnly</enum>
+     </property>
+     <property name="autoRaise">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
@@ -107,22 +110,5 @@
   </layout>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>closeButton</sender>
-   <signal>clicked()</signal>
-   <receiver>ChannelListFindBar</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>10</x>
-     <y>33</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>63</x>
-     <y>29</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

@@ -41,15 +41,17 @@ void MainWindow::setup()
     setWindowTitle(qApp->applicationName());
     setAttribute(Qt::WA_AlwaysShowToolTips);
 
+    QWidget *centralWidget = new QWidget(this);
+    setCentralWidget(centralWidget);
+
+    m_channelListFindBar = new ChannelListFindBar(centralWidget);
+
     setupActions();
     setupMenuBar();
     setupToolBar();
     setupStatusBar();
 
     connect(&m_autoUpdateTimer, SIGNAL(timeout()), this, SLOT(updateYellowPage()));
-
-    QWidget *centralWidget = new QWidget(this);
-    setCentralWidget(centralWidget);
 
     QVBoxLayout *layout = new QVBoxLayout(centralWidget);
     layout->setContentsMargins(0, 0, 0, 0);
@@ -61,10 +63,6 @@ void MainWindow::setup()
     m_channelListTabWidget = new ChannelListTabWidget(m_stackedWidget);
     m_channelListTabWidget->setAttribute(Qt::WA_MacShowFocusRect, false);
     m_stackedWidget->addWidget(m_channelListTabWidget);
-
-    m_channelListFindBar = new ChannelListFindBar(centralWidget);
-    m_channelListFindBar->hide();
-    layout->addWidget(m_channelListFindBar);
 
     setupChannelListWidget();
     readSettings();
@@ -223,8 +221,15 @@ void MainWindow::setupToolBar()
 
     m_mainToolBar->addAction(m_actions->updateYellowPageToolBarAction());
     m_mainToolBar->addAction(m_actions->showFavoritesAction());
-    m_mainToolBar->addAction(m_actions->findChannelAction());
     m_mainToolBar->addAction(m_actions->showSettingsAction());
+
+
+    QWidget* spacer = new QWidget();
+    spacer->setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Preferred);
+    m_mainToolBar->addWidget(spacer);
+
+    m_mainToolBar->addWidget(m_channelListFindBar);
+
     connect(m_mainToolBar, SIGNAL(orientationChanged(Qt::Orientation)),
             this, SLOT(toolBarOrientationChanged(Qt::Orientation)));
 }

@@ -30,7 +30,7 @@ signals:
     void findRequest(const QString &text, Qt::MatchFlags flags);
 
 private slots:
-    void on_closeButton_clicked();
+    void on_clearButton_clicked();
     void on_caseSensitivityCheckBox_stateChanged();
     void on_regExpCheckBox_stateChanged();
     void on_lineEdit_returnPressed();
