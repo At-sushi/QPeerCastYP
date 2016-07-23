@@ -143,25 +143,10 @@ Actions::Actions(MainWindow *mainWindow)
     m_aboutQtAction = new QAction(tr("&Qt について"), this);
     m_mainWindow->addAction(m_aboutQtAction);
     connect(m_aboutQtAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(aboutQt()));
-
-    loadUserActions();
 }
 
 Actions::~Actions()
 {
-}
-
-void Actions::loadUserActions()
-{
-    if (m_userActions) {
-        foreach (QAction *action, m_userActions->actions())
-            m_mainWindow->removeAction(action);
-        m_userActions->loadActions();
-    } else {
-        m_userActions = new UserActions(qApp->settings(), this);
-    }
-    foreach (QAction *action, m_userActions->actions())
-        m_mainWindow->addAction(action);
 }
 
 QMenu *Actions::fileMenu(QWidget *parent) const
@@ -186,11 +171,6 @@ QMenu *Actions::channelMenu(QWidget *parent) const
     QMenu *menu = new QMenu(tr("チャンネル(&C)"), parent);
     menu->addAction(m_playChannelAction);
     menu->addAction(m_openContactUrlAction);
-    if (!m_userActions->actions().isEmpty()) {
-        menu->addSeparator();
-        foreach (QAction *action, m_userActions->actions())
-            menu->addAction(action);
-    }
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
     menu->addAction(m_addToNGAction);
@@ -235,11 +215,6 @@ QMenu *Actions::channelContextMenu(QWidget *parent) const
     }
     menu->addAction(m_playChannelAction);
     menu->addAction(m_openContactUrlAction);
-    if (!m_userActions->actions().isEmpty()) {
-        menu->addSeparator();
-        foreach (QAction *action, m_userActions->actions())
-            menu->addAction(action);
-    }
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
     menu->addAction(m_addToNGAction);

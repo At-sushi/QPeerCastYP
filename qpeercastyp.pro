@@ -133,8 +133,6 @@ HEADERS += application.h \
            playeredit.h \
            notificationwidget.h \
            networkwidget.h \
-           useractions.h \
-           useractionedit.h \
            commandactiondialog.h \
            channel.h \
            channelmatcher.h \
@@ -163,8 +161,6 @@ SOURCES += main.cpp \
            expressiondialog.cpp \
            playeredit.cpp \
            notificationwidget.cpp \
-           useractions.cpp \
-           useractionedit.cpp \
            commandactiondialog.cpp \
            networkwidget.cpp \
            channel.cpp \
@@ -186,7 +182,6 @@ FORMS +=   channellistfindbar.ui \
            playeredit.ui \
            notificationwidget.ui \
            networkwidget.ui \
-           useractionedit.ui \
            commandactiondialog.ui \
            aboutqpeercastyp.ui \
            favoriteeditdialog.ui

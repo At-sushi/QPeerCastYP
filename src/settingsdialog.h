@@ -19,7 +19,6 @@ class YellowPageEdit;
 class PlayerEdit;
 class NotificationWidget;
 class NetworkWidget;
-class UserActionEdit;
 class AdvancedWidget;
 
 class SettingsDialog : public QDialog
@@ -31,7 +30,6 @@ public:
         YellowPage,
         Notification,
         Player,
-        UserAction,
         Network,
         Advanced
     };
@@ -41,7 +39,6 @@ public:
     GeneralWidget *generalWidget() const;
     YellowPageEdit *yellowPageEdit() const;
     NotificationWidget *notificationWidget() const;
-    UserActionEdit *userActionEdit() const;
     NetworkWidget *networkWidget() const;
 
     void setCurrentWidget(WidgetIndex index);
@@ -60,7 +57,6 @@ private:
     YellowPageEdit *m_yellowPageEdit;
     PlayerEdit *m_playerEdit;
     NotificationWidget *m_notificationWidget;
-    UserActionEdit *m_userActionEdit;
     NetworkWidget *m_networkWidget;
     AdvancedWidget *m_advancedWidget;
 };

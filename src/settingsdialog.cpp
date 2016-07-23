@@ -15,7 +15,6 @@
 #include "playeredit.h"
 #include "notificationwidget.h"
 #include "networkwidget.h"
-#include "useractionedit.h"
 
 SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     : QDialog(parent), m_settings(settings)
@@ -37,10 +36,6 @@ SettingsDialog::SettingsDialog(Settings *settings, QWidget *parent)
     m_playerEdit = new PlayerEdit(settings, m_tabWidget);
     m_playerEdit->setValue();
     m_tabWidget->insertTab(Player, m_playerEdit, tr("プレイヤー"));
-
-    m_userActionEdit = new UserActionEdit(settings, m_tabWidget);
-    m_userActionEdit->setValue();
-    m_tabWidget->insertTab(UserAction, m_userActionEdit, tr("アクション"));
 
     m_networkWidget = new NetworkWidget(settings, m_tabWidget);
     m_networkWidget->setValue();
@@ -85,11 +80,6 @@ NotificationWidget *SettingsDialog::notificationWidget() const
     return m_notificationWidget;
 }
 
-UserActionEdit *SettingsDialog::userActionEdit() const
-{
-    return m_userActionEdit;
-}
-
 NetworkWidget *SettingsDialog::networkWidget() const
 {
     return m_networkWidget;
@@ -110,8 +100,6 @@ void SettingsDialog::accept()
         m_notificationWidget->write();
     if (m_playerEdit->isDirty())
         m_playerEdit->write();
-    if (m_userActionEdit->isDirty())
-        m_userActionEdit->write();
     if (m_networkWidget->isDirty())
         m_networkWidget->write();
     QDialog::accept();

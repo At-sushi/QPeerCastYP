@@ -519,10 +519,6 @@ void MainWindow::showSettings(SettingsDialog::WidgetIndex index)
             setupChannelListWidget();
             setTabBarVisible(!hidden);
         }
-        if (dialog.userActionEdit()->isDirty()) {
-            qApp->actions()->loadUserActions();
-            updateMenuBar();
-        }
     }
 }
 
