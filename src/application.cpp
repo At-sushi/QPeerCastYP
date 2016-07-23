@@ -43,6 +43,11 @@ Application::Application(int &argc, char *argv[])
 #endif
             break;
     }
+    foreach (QString dir, trDirs) {
+        if (appTr->load(locale, dir)) {
+	  break;
+	}
+    }
     installTranslator(appTr);
 
     QString appName = "QPeerCastYP";

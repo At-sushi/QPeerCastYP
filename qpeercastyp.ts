@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.0" language="ja_JP">
+<TS version="2.0" language="en">
 <defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>AboutQPeerCastYP</name>
     <message>
         <location filename="src/aboutqpeercastyp.ui" line="14"/>
         <source>QPeerCastYP について</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">About QPeerCastYP</translation>
     </message>
     <message>
         <location filename="src/aboutqpeercastyp.ui" line="34"/>
         <source>Icon</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -64,122 +64,151 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="64"/>
         <source>コンタクトURLをウェブ・ブラウザで開く(&amp;W)</source>
-        <translation type="unfinished">コンタクトURLをウェブ・ブラウザで開く</translation>
+        <translation type="obsolete">コンタクトURLをウェブ・ブラウザで開く</translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="64"/>
+        <source>NGに追加(&amp;N)</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/actions.cpp" line="65"/>
-        <source>コンタクト</source>
+        <source>NG</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/actions.cpp" line="70"/>
+        <source>コンタクトURLを開く(&amp;W)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="71"/>
+        <source>コンタクト</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="76"/>
         <source>コンタクトURLを&amp;2ちゃんねるブラウザで開く</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="75"/>
+        <location filename="src/actions.cpp" line="81"/>
         <source>チャンネル情報をコピー(&amp;I)</source>
         <translation type="unfinished">チャンネル情報をコピー</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="80"/>
+        <location filename="src/actions.cpp" line="86"/>
         <source>ストリームURLをコピー(&amp;S)</source>
         <translation type="unfinished">ストリームURLをコピー</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="85"/>
+        <location filename="src/actions.cpp" line="91"/>
         <source>コンタクトURLをコピー(&amp;C)</source>
         <translation type="unfinished">コンタクトURLをコピー</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="90"/>
+        <location filename="src/actions.cpp" line="96"/>
         <source>チャンネルを検索(&amp;F)</source>
         <translation type="unfinished">チャンネルを検索</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="91"/>
+        <location filename="src/actions.cpp" line="97"/>
         <source>検索</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="97"/>
+        <location filename="src/actions.cpp" line="103"/>
         <source>メニューバーを表示(&amp;M)</source>
         <translation type="unfinished">メニューバーを表示</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="103"/>
+        <location filename="src/actions.cpp" line="109"/>
         <source>ツールバーを表示(&amp;T)</source>
         <translation type="unfinished">ツールバーを表示</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="108"/>
+        <location filename="src/actions.cpp" line="114"/>
         <source>ステータスバーを表示(&amp;A)</source>
         <translation type="unfinished">ステータスバーを表示</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="113"/>
+        <location filename="src/actions.cpp" line="119"/>
         <source>タブバーを表示(&amp;B)</source>
         <translation type="unfinished">タブバーを表示</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="119"/>
+        <location filename="src/actions.cpp" line="125"/>
         <source>%1 を設定(&amp;C)...</source>
         <translation type="unfinished">%1 を設定...</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="120"/>
+        <location filename="src/actions.cpp" line="126"/>
         <source>設定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="126"/>
-        <source>Q&amp;PeerCastYP について</source>
+        <location filename="src/actions.cpp" line="131"/>
+        <source>お気に入りを整理(&amp;O)...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/actions.cpp" line="132"/>
+        <source>お気に入りを整理</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="137"/>
+        <source>Q&amp;PeerCastYP について</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="143"/>
         <source>&amp;Qt について</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="158"/>
+        <location filename="src/actions.cpp" line="169"/>
         <source>ファイル(&amp;F)</source>
         <translation type="unfinished">ファイル</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="165"/>
+        <location filename="src/actions.cpp" line="176"/>
         <source>イエローページ(&amp;Y)</source>
         <translation type="unfinished">イエローページ</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="197"/>
+        <location filename="src/actions.cpp" line="186"/>
+        <source>チャンネル(&amp;C)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/actions.cpp" line="267"/>
         <source>設定(&amp;S)</source>
         <translation type="unfinished">設定</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="213"/>
+        <location filename="src/actions.cpp" line="283"/>
         <source>ヘルプ(&amp;H)</source>
         <translation type="unfinished">ヘルプ</translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="222"/>
+        <location filename="src/actions.cpp" line="292"/>
         <source>このチャンネルは再生できません。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="239"/>
+        <location filename="src/actions.cpp" line="309"/>
         <source>%1 用のプレイヤが設定されていません。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="264"/>
+        <location filename="src/actions.cpp" line="334"/>
         <source>エラー</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/actions.cpp" line="264"/>
+        <location filename="src/actions.cpp" line="334"/>
         <source>プログラムの実行に失敗しました。</source>
         <translation type="unfinished"></translation>
     </message>
@@ -187,17 +216,17 @@
 <context>
     <name>Application</name>
     <message>
-        <location filename="src/application.cpp" line="109"/>
+        <location filename="src/application.cpp" line="118"/>
         <source>エラー</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/application.cpp" line="109"/>
+        <location filename="src/application.cpp" line="118"/>
         <source>PeerCast の起動に失敗しました。</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/application.cpp" line="111"/>
+        <location filename="src/application.cpp" line="120"/>
         <source>PeerCast プログラムが設定されていません。</source>
         <translation type="unfinished"></translation>
     </message>
@@ -246,62 +275,62 @@
 <context>
     <name>ChannelListWidget</name>
     <message>
-        <location filename="src/channellistwidget.cpp" line="229"/>
+        <location filename="src/channellistwidget.cpp" line="233"/>
         <source>S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="230"/>
+        <location filename="src/channellistwidget.cpp" line="234"/>
         <source>配信者</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="231"/>
+        <location filename="src/channellistwidget.cpp" line="235"/>
         <source>詳細</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="232"/>
+        <location filename="src/channellistwidget.cpp" line="236"/>
         <source>視聴者数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="233"/>
+        <location filename="src/channellistwidget.cpp" line="237"/>
         <source>リレー数</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="234"/>
+        <location filename="src/channellistwidget.cpp" line="238"/>
         <source>スコア</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="235"/>
+        <location filename="src/channellistwidget.cpp" line="239"/>
         <source>配信時間</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="236"/>
+        <location filename="src/channellistwidget.cpp" line="240"/>
         <source>ビットレート</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="237"/>
+        <location filename="src/channellistwidget.cpp" line="241"/>
         <source>種類</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="300"/>
+        <location filename="src/channellistwidget.cpp" line="304"/>
         <source>$CHANNEL(NAME) | ビットレート $CHANNEL(BITRATE)kbps | 視聴者 $CHANNEL(LISTENERS_STRING) | 配信時間 $CHANNEL(UPTIME_STRING) | 種類 $CHANNEL(TYPE)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="856"/>
+        <location filename="src/channellistwidget.cpp" line="897"/>
         <source>カラムの表示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="304"/>
+        <location filename="src/channellistwidget.cpp" line="308"/>
         <source>$CHANNEL(CONTACT_URL)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -484,17 +513,17 @@ QRegExp: %1</source>
 <context>
     <name>ExpressionListWidget</name>
     <message>
-        <location filename="src/favoriteedit.cpp" line="70"/>
+        <location filename="src/favoriteedit.cpp" line="71"/>
         <source>検索文字/正規表現</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/favoriteedit.cpp" line="71"/>
+        <location filename="src/favoriteedit.cpp" line="72"/>
         <source>検索対象</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/favoriteedit.cpp" line="72"/>
+        <location filename="src/favoriteedit.cpp" line="73"/>
         <source>点数</source>
         <translation type="unfinished"></translation>
     </message>
@@ -502,38 +531,31 @@ QRegExp: %1</source>
 <context>
     <name>FavoriteEdit</name>
     <message>
-        <location filename="src/favoriteedit.ui" line="19"/>
+        <location filename="src/favoriteedit.ui" line="20"/>
         <source>FavoriteEdit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/favoriteedit.ui" line="60"/>
-        <source>↑</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/favoriteedit.ui" line="82"/>
-        <source>↓</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/favoriteedit.ui" line="96"/>
+        <location filename="src/favoriteedit.ui" line="28"/>
         <source>お気に入りを追加</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/favoriteedit.ui" line="103"/>
-        <source>グループを追加</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/favoriteedit.ui" line="110"/>
+        <location filename="src/favoriteedit.ui" line="35"/>
         <source>編集</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/favoriteedit.ui" line="117"/>
+        <location filename="src/favoriteedit.ui" line="42"/>
         <source>削除</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>FavoriteEditDialog</name>
+    <message>
+        <location filename="src/favoriteeditdialog.ui" line="14"/>
+        <source>お気に入りの整理</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -584,82 +606,93 @@ QRegExp: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="60"/>
+        <location filename="src/generalwidget.ui" line="62"/>
+        <source>フォント</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/generalwidget.ui" line="97"/>
         <source>スコアがマイナスなチャンネルは表示しない</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="67"/>
+        <location filename="src/generalwidget.ui" line="104"/>
         <source>自動更新をデフォルトにする</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="76"/>
+        <location filename="src/generalwidget.ui" line="113"/>
         <source>自動更新の間隔</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="111"/>
+        <location filename="src/generalwidget.ui" line="148"/>
         <source>分</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="139"/>
+        <location filename="src/generalwidget.ui" line="176"/>
         <source>独自ツールチップを使用する</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="146"/>
+        <location filename="src/generalwidget.ui" line="183"/>
         <source>配信者をリンクとして表示</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="158"/>
+        <location filename="src/generalwidget.ui" line="195"/>
         <source>クリック時の動作</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="193"/>
+        <location filename="src/generalwidget.ui" line="227"/>
+        <source>ダイアログなしでお気に入り/NGに追加する</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/generalwidget.ui" line="237"/>
         <source>システムトレイ／通知エリア</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="202"/>
+        <location filename="src/generalwidget.ui" line="246"/>
         <source>アイコンを表示する</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="212"/>
+        <location filename="src/generalwidget.ui" line="256"/>
         <source>ウェブ・ブラウザ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="221"/>
+        <location filename="src/generalwidget.ui" line="265"/>
         <source>デスクトップ環境の既定</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="228"/>
+        <location filename="src/generalwidget.ui" line="272"/>
         <source>その他</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.ui" line="245"/>
+        <location filename="src/generalwidget.ui" line="75"/>
+        <location filename="src/generalwidget.ui" line="289"/>
         <source>選択...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.cpp" line="23"/>
+        <location filename="src/generalwidget.cpp" line="25"/>
         <source>チャンネルを再生</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.cpp" line="24"/>
+        <location filename="src/generalwidget.cpp" line="26"/>
         <source>コンタクトURLを開く</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/generalwidget.cpp" line="84"/>
+        <location filename="src/generalwidget.cpp" line="91"/>
         <source>プログラムを選択</source>
         <translation type="unfinished"></translation>
     </message>
@@ -667,18 +700,23 @@ QRegExp: %1</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="src/mainwindow.cpp" line="205"/>
+        <location filename="src/mainwindow.cpp" line="220"/>
         <source>メインツールバー</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="408"/>
+        <location filename="src/mainwindow.cpp" line="431"/>
         <source>チャンネル %1 | 視聴者 %2 | イエローページ %3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/mainwindow.cpp" line="411"/>
+        <location filename="src/mainwindow.cpp" line="434"/>
         <source>チャンネル %1 | 視聴者 %2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/mainwindow.cpp" line="550"/>
+        <source>バージョン %1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -701,7 +739,13 @@ QRegExp: %1</source>
     </message>
     <message>
         <location filename="src/networkwidget.ui" line="91"/>
+        <location filename="src/networkwidget.ui" line="161"/>
         <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/networkwidget.ui" line="183"/>
+        <source>HTTP プロキシ (要再起動)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -720,17 +764,17 @@ QRegExp: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/networkwidget.ui" line="113"/>
+        <location filename="src/networkwidget.ui" line="149"/>
         <source>タイムアウトまでの時間</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/networkwidget.ui" line="139"/>
+        <location filename="src/networkwidget.ui" line="121"/>
         <source>秒</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/networkwidget.cpp" line="48"/>
+        <location filename="src/networkwidget.cpp" line="55"/>
         <source>プログラムを選択</source>
         <translation type="unfinished"></translation>
     </message>
@@ -881,11 +925,12 @@ QRegExp: %1</source>
     </message>
     <message>
         <location filename="src/playeredit.cpp" line="23"/>
-        <source>&lt;table cellspacing=6 width=100%&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL&lt;/td&gt;&lt;td&gt;ストリーム URL (HTTP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL(scheme)&lt;/td&gt;&lt;td&gt;ストリーム URL (スキームを指定)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$CHANNEL(property)&lt;/td&gt;&lt;td&gt;チャンネル情報&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <source>&lt;table cellspacing=6 width=100%&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL&lt;/td&gt;&lt;td&gt;ストリーム URL (HTTP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL(scheme)&lt;/td&gt;&lt;td&gt;ストリーム URL (スキームを指定)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$PLAYLIST_URL&lt;/td&gt;&lt;td&gt;プレイリスト URL&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$CHANNEL(property)&lt;/td&gt;&lt;td&gt;チャンネル情報&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</source>
+        <oldsource>&lt;table cellspacing=6 width=100%&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL&lt;/td&gt;&lt;td&gt;ストリーム URL (HTTP)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$STREAM_URL(scheme)&lt;/td&gt;&lt;td&gt;ストリーム URL (スキームを指定)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;$CHANNEL(property)&lt;/td&gt;&lt;td&gt;チャンネル情報&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</oldsource>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/playeredit.cpp" line="103"/>
+        <location filename="src/playeredit.cpp" line="104"/>
         <source>プログラムを選択</source>
         <translation type="unfinished"></translation>
     </message>
@@ -893,27 +938,27 @@ QRegExp: %1</source>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="src/channellistwidget.cpp" line="63"/>
+        <location filename="src/channellistwidget.cpp" line="66"/>
         <source>新規</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="66"/>
+        <location filename="src/channellistwidget.cpp" line="69"/>
         <source>詳細変更あり</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="71"/>
+        <location filename="src/channellistwidget.cpp" line="74"/>
         <source>放送終了</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="84"/>
+        <location filename="src/channellistwidget.cpp" line="87"/>
         <source>お気に入り (スコア: %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/channellistwidget.cpp" line="87"/>
+        <location filename="src/channellistwidget.cpp" line="90"/>
         <source>再生不可</source>
         <translation type="unfinished"></translation>
     </message>
@@ -976,42 +1021,37 @@ QRegExp: %1</source>
 <context>
     <name>SettingsDialog</name>
     <message>
-        <location filename="src/settingsdialog.cpp" line="28"/>
+        <location filename="src/settingsdialog.cpp" line="27"/>
         <source>全般</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="32"/>
+        <location filename="src/settingsdialog.cpp" line="31"/>
         <source>イエローページ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="36"/>
-        <source>お気に入り</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="src/settingsdialog.cpp" line="40"/>
+        <location filename="src/settingsdialog.cpp" line="35"/>
         <source>通知</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="44"/>
+        <location filename="src/settingsdialog.cpp" line="39"/>
         <source>プレイヤ</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="48"/>
+        <location filename="src/settingsdialog.cpp" line="43"/>
         <source>アクション</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="52"/>
+        <location filename="src/settingsdialog.cpp" line="47"/>
         <source>ネットワーク</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/settingsdialog.cpp" line="67"/>
+        <location filename="src/settingsdialog.cpp" line="62"/>
         <source>%1 の設定</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1083,22 +1123,22 @@ QRegExp: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/yellowpage.cpp" line="176"/>
+        <location filename="src/yellowpage.cpp" line="180"/>
         <source>イエローページの更新に失敗しました。(%1: %2 %3 / %4)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/yellowpage.cpp" line="178"/>
+        <location filename="src/yellowpage.cpp" line="182"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/yellowpage.cpp" line="297"/>
+        <location filename="src/yellowpage.cpp" line="301"/>
         <source>index.txt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="src/yellowpage.cpp" line="299"/>
+        <location filename="src/yellowpage.cpp" line="303"/>
         <source>XML(本家)</source>
         <oldsource>XML(æ¬å®¶)</oldsource>
         <translation type="unfinished"></translation>

@@ -99,7 +99,7 @@ PRECOMPILED_HEADER = stable.h
 RESOURCES = qpeercastyp.qrc
 
 CODECFORTR = UTF-8
-TRANSLATIONS = qpeercastyp.ts
+TRANSLATIONS = qpeercastyp.ts translations/en_us.ts
 
 HEADERS += network.h \
            utils.h \

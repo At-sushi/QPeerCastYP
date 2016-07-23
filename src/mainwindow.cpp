@@ -544,8 +544,11 @@ void MainWindow::aboutQPeerCastYP()
     Ui::AboutQPeerCastYP ui;
     ui.setupUi(&dialog);
     ui.iconLabel->setPixmap(qApp->applicationIcon().pixmap(64, 64));
-    ui.label->setText("<center><p><b>QPeerCastYP</b></p></center>"
-                      "<center><p>バージョン " VERSION "</p></center>"
+    ui.label->setText(QString() +
+                      "<center><p><b>QPeerCastYP</b></p></center>" +
+                      "<center><p>" +
+                      tr("バージョン %1").arg(VERSION) +
+                      "</p></center>" +
                       "<center>© 2008-2012 bookdraft<center>");
     dialog.resize(dialog.minimumSizeHint().width() + 200, dialog.minimumSizeHint().height());
     dialog.exec();
