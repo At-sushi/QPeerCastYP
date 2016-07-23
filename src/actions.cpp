@@ -60,6 +60,11 @@ Actions::Actions(MainWindow *mainWindow)
     m_mainWindow->addAction(m_addToFavoritesAction);
     connect(m_addToFavoritesAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(addToFavorites()));
 
+    m_unfavoriteAction = new QAction(QIcon(":/images/unfavorite.png"), tr("お気に入り解除(&U)"), this);
+    m_unfavoriteAction->setIconText(tr("お気に入り解除"));
+    m_mainWindow->addAction(m_unfavoriteAction);
+    connect(m_unfavoriteAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(unfavorite()));
+
     m_addToNGAction = new QAction(QIcon(":/images/stopped.png"), tr("NGに追加(&N)"), this);
     m_addToNGAction->setIconText(tr("NG"));
     m_addToNGAction->setShortcut(QKeySequence("Ctrl+Shift+D"));
@@ -172,6 +177,7 @@ QMenu *Actions::channelMenu(QWidget *parent) const
     menu->addAction(m_openContactUrlAction);
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
+    menu->addAction(m_unfavoriteAction);
     menu->addAction(m_addToNGAction);
     menu->addSeparator();
     menu->addAction(m_showFavoritesAction);
@@ -216,6 +222,7 @@ QMenu *Actions::channelContextMenu(QWidget *parent) const
     menu->addAction(m_openContactUrlAction);
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
+    menu->addAction(m_unfavoriteAction);
     menu->addAction(m_addToNGAction);
     menu->addSeparator();
     menu->addAction(m_copyChannelInfoAction);
@@ -345,6 +352,11 @@ QAction *Actions::playChannelAction() const
 QAction *Actions::addToFavoritesAction() const
 {
     return m_addToFavoritesAction;
+}
+
+QAction *Actions::unfavoriteAction() const
+{
+    return m_unfavoriteAction;
 }
 
 QAction *Actions::addToNGAction() const

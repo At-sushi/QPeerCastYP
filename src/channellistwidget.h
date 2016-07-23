@@ -80,6 +80,7 @@ public slots:
     void findItems(const QString &text, Qt::MatchFlags flags = Qt::MatchContains);
     void playChannel(Channel *channel = 0);
     void addToFavorites(int score = 3);
+    void unfavorite();
     void openContactUrl();
     void copyStreamUrl();
     void copyContactUrl();

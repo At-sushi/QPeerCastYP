@@ -11,6 +11,7 @@
 #define CHANNELMATCHER_H
 
 #include <QtCore>
+#include <functional>
 
 class Channel;
 class Settings;
@@ -36,6 +37,12 @@ public:
     class Expression : public QObject
     {
     public:
+        class IPredicate
+        {
+        public:
+            virtual bool operator()(Expression *) = 0;
+        };
+
         Expression(QObject *parent = 0) : QObject(parent) {
             isRoot = false;
             isGroup = false;
@@ -75,6 +82,8 @@ public:
 
     Expression *favoriteGroup();
     Expression *ngGroup();
+
+    bool removeExpression(Expression::IPredicate *pred, Expression *group);
 
 private:
     int score(Channel *channel, Expression *exp) const;

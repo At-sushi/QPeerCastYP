@@ -169,6 +169,22 @@ void ChannelMatcher::addExpression(const QString &pattern, Qt::MatchFlags matchF
     group->expressions += exp;
 }
 
+bool ChannelMatcher::removeExpression(Expression::IPredicate *pred, Expression *group)
+{
+    if (!group) group = m_rootGroup;
+
+    foreach (Expression *exp, group->expressions) {
+        if (exp->isGroup) {
+            if (removeExpression(pred, exp))
+                return true;
+        }
+        if ((*pred)(exp)) {
+            return group->expressions.removeOne(exp);
+        }
+    }
+    return false;
+}
+
 void ChannelMatcher::clear()
 {
     delete m_rootGroup;

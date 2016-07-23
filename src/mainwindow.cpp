@@ -378,6 +378,12 @@ void MainWindow::addToFavorites()
         currentChannelListWidget()->addToFavorites();
 }
 
+void MainWindow::unfavorite()
+{
+    if (currentChannelListWidget())
+        currentChannelListWidget()->unfavorite();
+}
+
 void MainWindow::addToNG()
 {
     if (currentChannelListWidget())
