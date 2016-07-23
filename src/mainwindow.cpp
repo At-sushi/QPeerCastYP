@@ -23,7 +23,6 @@
 #include "settingsdialog.h"
 #include "generalwidget.h"
 #include "yellowpageedit.h"
-#include "useractionedit.h"
 #include "favoriteeditdialog.h"
 
 #include "ui_aboutqpeercastyp.h"
