@@ -35,6 +35,7 @@ public:
     QMenu *channelMenu(QWidget *parent) const;
     QAction *playChannelAction() const;
     QAction *addToFavoritesAction() const;
+    QAction *unfavoriteAction() const;
     QAction *addToNGAction() const;
     QAction *openContactUrlAction() const;
     QAction *openContactUrlWith2chBrowserAction() const;
@@ -78,6 +79,7 @@ private:
     QAction *m_toggleAutoUpdateAction;
     QAction *m_playChannelAction;
     QAction *m_addToFavoritesAction;
+    QAction *m_unfavoriteAction;
     QAction *m_addToNGAction;
     QAction *m_openContactUrlAction;
     QAction *m_openContactUrlWith2chBrowserAction;

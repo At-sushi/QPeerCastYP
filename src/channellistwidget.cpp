@@ -466,6 +466,7 @@ void ChannelListWidget::updateActions()
     bool enabled = (bool)channel;
     actions->playChannelAction()->setEnabled(enabled ? channel->isPlayable() : false);
     actions->addToFavoritesAction()->setEnabled(enabled);
+    actions->unfavoriteAction()->setEnabled(enabled && channel->isFavorite());
     actions->addToNGAction()->setEnabled(enabled);
     actions->copyChannelInfoAction()->setEnabled(enabled);
     actions->copyStreamUrlAction()->setEnabled(enabled);
@@ -561,15 +562,42 @@ void ChannelListWidget::addToFavorites(int score)
 
         qApp->yellowPageManager()->update();
 
-        QString msg = QString("「%1」を%2に追加しました。")
+        QString msg = tr("「%1」を%2に追加しました。")
             .arg(channel->name(true))
             .arg(isFavorite ? "お気に入り" : "NG");
-        qApp->systemTrayIcon()->showMessage("お知らせ", msg);
+        qApp->systemTrayIcon()->showMessage(tr("お知らせ"), msg);
     } else {
         FavoriteEditDialog dialog(qApp->settings(), this);
 
         dialog.favoriteEdit()->addExpression(channel->name(true), Qt::MatchStartsWith, ChannelMatcher::Name, score);
         dialog.exec();
+    }
+}
+
+void ChannelListWidget::unfavorite()
+{
+    Channel *channel = currentChannel();
+
+    if (!channel) return;
+
+    ChannelMatcher matcher(qApp->settings());
+
+    class Predicate : public ChannelMatcher::Expression::IPredicate {
+    public:
+        Predicate(QString name) : m_name(name) {}
+        bool operator()(ChannelMatcher::Expression *exp)
+            {
+                return exp->pattern == m_name;
+            }
+        QString m_name;
+    } pred(channel->name(true));
+    bool success;
+    success = matcher.removeExpression(&pred, matcher.favoriteGroup());
+
+    if (success) {
+        matcher.saveExpressions();
+        qApp->yellowPageManager()->update();
+        qApp->systemTrayIcon()->showMessage(tr("お知らせ"), tr("「%1」をお気に入り解除しました。").arg(channel->name(true)));
     }
 }
 
