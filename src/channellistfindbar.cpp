@@ -77,13 +77,7 @@ void ChannelListFindBar::emitFindRequest()
 {
     Qt::MatchFlags flags;
 
-    if (caseSensitivityCheckBox->isChecked())
-        flags |= Qt::MatchCaseSensitive;
-
-    if (regExpCheckBox->isChecked())
-        flags |= Qt::MatchRegExp;
-    else
-        flags |= Qt::MatchContains;
+    flags |= Qt::MatchContains;
 
     emit findRequest(lineEdit->text(), flags);
 }
