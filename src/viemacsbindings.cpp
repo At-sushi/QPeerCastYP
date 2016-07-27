@@ -78,6 +78,9 @@ bool ViEmacsBindings::eventFilter(QObject *watched, QEvent *event)
             case Qt::SHIFT | Qt::Key_G:
                 sendMod = Qt::CTRL;
                 sendKey = Qt::Key_End; break;
+            case Qt::Key_Slash:
+                sendMod = Qt::CTRL;
+                sendKey = Qt::Key_F; break;
             }
         }
 
