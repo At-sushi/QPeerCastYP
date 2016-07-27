@@ -65,6 +65,10 @@ void MainWindow::setup()
     m_stackedWidget->addWidget(m_channelListTabWidget);
 
     setupChannelListWidget();
+
+    // 検索バーにフォーカスが当たらないように。
+    m_channelListTabWidget->setFocus(Qt::OtherFocusReason);
+
     readSettings();
     updateStatusBar();
 }
