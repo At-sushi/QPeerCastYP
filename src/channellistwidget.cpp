@@ -177,10 +177,14 @@ public:
             }
             switch (sortColumn) {
             case ChannelListWidget::Status:
+            {
+                bool ascending = treeWidget()->header()->sortIndicatorOrder() == Qt::AscendingOrder;
                 if (m_channel->status() + m_channel->score() == other->status() + other->score())
                     break;
                 else
-                    return m_channel->status() + m_channel->score() < other->status() + other->score();
+                    return ascending ^
+                        (m_channel->status() + m_channel->score() < other->status() + other->score());
+            }
             case ChannelListWidget::Listeners:
                 if (m_channel->listeners() == other->listeners())
                     break;
