@@ -71,12 +71,20 @@ void MainWindow::setup()
 
     readSettings();
     updateStatusBar();
+
+    m_channelListTabWidget->setCurrentWidget(m_mergedChannelList);
 }
 
 void MainWindow::setupChannelListWidget()
 {
     setUpdatesEnabled(false);
     YellowPage *manager = qApp->yellowPageManager();
+
+    ChannelListWidget *incomingList = new ChannelListWidget(m_channelListTabWidget, manager);
+    incomingList->setAttribute(Qt::WA_MacShowFocusRect, false);
+    incomingList->setOnlyShowNewChannels(true);
+    m_channelListTabWidget->addTab(incomingList, "新着");
+
     m_mergedChannelList = new ChannelListWidget(m_channelListTabWidget, manager);
     m_mergedChannelList->setAttribute(Qt::WA_MacShowFocusRect, false);
     m_mergedChannelList->setSaveHeaderStateOnDestruction(true);
@@ -97,6 +105,7 @@ void MainWindow::setupChannelListWidget()
         list->setAttribute(Qt::WA_MacShowFocusRect, false);
         m_channelListTabWidget->addTab(list, yp->name());
     }
+
     setUpdatesEnabled(true);
     m_actions->showTabBarAction()->setChecked(false);
 }
@@ -484,7 +493,7 @@ void MainWindow::setTabBarVisible(bool shown)
                 m_mergedChannelList, SLOT(findItems(QString, Qt::MatchFlags)));
         m_stackedWidget->setCurrentWidget(m_channelListTabWidget);
         m_stackedWidget->removeWidget(m_mergedChannelList);
-        m_channelListTabWidget->insertTab(0, m_mergedChannelList,
+        m_channelListTabWidget->insertTab(1, m_mergedChannelList,
                 m_mergedChannelList->yellowPage()->name());
         m_channelListTabWidget->setCurrentWidget(m_mergedChannelList);
         m_channelListTabWidget->setActive(true);

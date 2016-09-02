@@ -69,6 +69,9 @@ public:
     void setMinimumScore(int score);
     int minimumScore();
 
+    bool onlyShowNewChannels() const;
+    void setOnlyShowNewChannels(bool value);
+
     void setSaveHeaderStateOnDestruction(bool flag);
     bool saveHeaderStateOnDestruction();
 
@@ -131,6 +134,7 @@ private:
     QList<int> m_sortOrder;
     int m_minimumScore;
     bool m_saveHeaderStateOnDestruction;
+    bool m_onlyShowNewChannels;
 };
 
 #endif // CHANNELLISTWIDGET_H

@@ -228,7 +228,7 @@ private:
 };
 
 ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
-    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX), m_saveHeaderStateOnDestruction(false)
+    : QTreeWidget(parent), m_active(false), m_linkHovered(false), m_pressedChannel(0), m_minimumScore(INT_MAX), m_saveHeaderStateOnDestruction(false), m_onlyShowNewChannels(false)
 {
     setAutoScroll(false);
     setYellowPage(yellowPage);
@@ -447,6 +447,8 @@ void ChannelListWidget::addItems(const ChannelList &channels)
         if (dontShowMinusScoreChannels and channel->score() < 0)
             continue;
         if (m_minimumScore != INT_MAX and channel->score() < m_minimumScore)
+            continue;
+        if (m_onlyShowNewChannels and (channel->status() & Channel::New) == 0)
             continue;
         new ChannelListWidgetItem(this, channel);
     }
@@ -951,6 +953,16 @@ void ChannelListWidget::setMinimumScore(int score)
 int ChannelListWidget::minimumScore()
 {
     return m_minimumScore;
+}
+
+void ChannelListWidget::setOnlyShowNewChannels(bool value)
+{
+    m_onlyShowNewChannels = value;
+}
+
+bool ChannelListWidget::onlyShowNewChannels() const
+{
+    return m_onlyShowNewChannels;
 }
 
 void ChannelListWidget::setSaveHeaderStateOnDestruction(bool flag)
