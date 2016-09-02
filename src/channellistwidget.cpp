@@ -189,7 +189,7 @@ public:
                 if (m_channel->listeners() == other->listeners())
                     break;
                 else
-                    return m_channel->listeners() < other->listeners();
+                    return m_channel->listeners() > other->listeners();
             case ChannelListWidget::Relays:
                 if (m_channel->relays() == other->relays())
                     break;
@@ -209,7 +209,7 @@ public:
                 if (m_channel->uptime() == other->uptime())
                     break;
                 else
-                    return m_channel->uptime() > other->uptime();
+                    return m_channel->uptime() < other->uptime();
             case ChannelListWidget::Name:
             case ChannelListWidget::Description:
             case ChannelListWidget::Type:
