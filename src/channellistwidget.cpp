@@ -233,7 +233,7 @@ ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
     labels[Status] = tr("S");
     labels[Name] = tr("配信者");
     labels[Description] = tr("詳細");
-    labels[Listeners] = tr("視聴者数");
+    labels[Listeners] = tr("視聴者");
     labels[Relays] = tr("リレー数");
     labels[Score] = tr("スコア");
     labels[Uptime] = tr("配信時間");
