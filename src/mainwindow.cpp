@@ -71,8 +71,6 @@ void MainWindow::setup()
 
     readSettings();
     updateStatusBar();
-
-    m_channelListTabWidget->setCurrentWidget(m_mergedChannelList);
 }
 
 void MainWindow::setupChannelListWidget()
@@ -108,6 +106,8 @@ void MainWindow::setupChannelListWidget()
 
     setUpdatesEnabled(true);
     m_actions->showTabBarAction()->setChecked(false);
+
+    m_channelListTabWidget->setCurrentWidget(m_mergedChannelList);
 }
 
 void MainWindow::clearChannelListWidget()
@@ -483,8 +483,6 @@ void MainWindow::setToolBarVisible(bool shown)
 
 void MainWindow::setTabBarVisible(bool shown)
 {
-    if (shown == !m_channelListTabWidget->isHidden())
-        return;
     setUpdatesEnabled(false);
     if (shown) {
         connect(m_channelListFindBar, SIGNAL(findRequest(QString, Qt::MatchFlags)),
