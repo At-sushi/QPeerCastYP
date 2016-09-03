@@ -503,7 +503,7 @@ void ChannelListWidget::findItems(const QString &text, Qt::MatchFlags flags)
     Qt::CaseSensitivity cs =
         flags & Qt::MatchCaseSensitive ? Qt::CaseSensitive : Qt::CaseInsensitive;
     QRegExp::PatternSyntax ps =
-        flags & (Qt::MatchWildcard == Qt::MatchWildcard) ? QRegExp::Wildcard : QRegExp::RegExp;
+        flags & Qt::MatchWildcard ? QRegExp::Wildcard : QRegExp::RegExp;
     QRegExp rx(text, cs, ps);
 
     for (int i = 0; i < topLevelItemCount(); ++i) {
