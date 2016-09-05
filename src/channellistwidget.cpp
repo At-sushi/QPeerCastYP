@@ -276,6 +276,8 @@ ChannelListWidget::ChannelListWidget(QWidget *parent, YellowPage *yellowPage)
             SLOT(currentItemChanged(QTreeWidgetItem *)));
     connect(this, SIGNAL(linkHovered(Channel *)), SLOT(onLinkHovered(Channel *)));
     connect(this, SIGNAL(linkClicked(Channel *)), SLOT(onLinkClicked(Channel *)));
+
+    setAttribute(Qt::WA_MacShowFocusRect, false);
 }
 
 ChannelListWidget::~ChannelListWidget()

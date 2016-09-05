@@ -81,12 +81,10 @@ void MainWindow::setupChannelListWidget()
     YellowPage *manager = qApp->yellowPageManager();
 
     ChannelListWidget *incomingList = new ChannelListWidget(m_channelListTabWidget, manager);
-    incomingList->setAttribute(Qt::WA_MacShowFocusRect, false);
     incomingList->setOnlyShowNewChannels(true);
     m_channelListTabWidget->addTab(incomingList, "新着");
 
     m_mergedChannelList = new ChannelListWidget(m_channelListTabWidget, manager);
-    m_mergedChannelList->setAttribute(Qt::WA_MacShowFocusRect, false);
     m_mergedChannelList->setSaveHeaderStateOnDestruction(true);
     m_channelListTabWidget->addTab(m_mergedChannelList, manager->name());
     m_mergedChannelList->setActive(true);
@@ -95,14 +93,12 @@ void MainWindow::setupChannelListWidget()
 
     ChannelListWidget *favoritesList = new ChannelListWidget(m_channelListTabWidget, manager);
     favoritesList->setMinimumScore(1);
-    favoritesList->setAttribute(Qt::WA_MacShowFocusRect, false);
     m_channelListTabWidget->addTab(favoritesList, "お気に入り");
 
     foreach (YellowPage *yp, manager->yellowPages()) {
         if (!yp->isEnabled())
             continue;
         ChannelListWidget *list = new ChannelListWidget(m_channelListTabWidget, yp);
-        list->setAttribute(Qt::WA_MacShowFocusRect, false);
         m_channelListTabWidget->addTab(list, yp->name());
     }
 
