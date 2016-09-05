@@ -66,6 +66,9 @@ void MainWindow::setup()
 
     setupChannelListWidget();
 
+    m_stackedWidget->addWidget(m_mergedChannelList);
+    m_stackedWidget->setCurrentWidget(m_mergedChannelList);
+
     // 検索バーにフォーカスが当たらないように。
     m_channelListTabWidget->setFocus(Qt::OtherFocusReason);
 
@@ -86,7 +89,6 @@ void MainWindow::setupChannelListWidget()
 
     m_mergedChannelList = new ChannelListWidget(m_channelListTabWidget, manager);
     m_mergedChannelList->setSaveHeaderStateOnDestruction(true);
-    m_channelListTabWidget->addTab(m_mergedChannelList, manager->name());
     m_mergedChannelList->setActive(true);
     connect(m_channelListFindBar, SIGNAL(findRequest(QString, Qt::MatchFlags)),
             m_channelListTabWidget, SLOT(findRequest(QString, Qt::MatchFlags)));
