@@ -38,7 +38,6 @@ public:
     virtual QDateTime lastUpdatedTime();
 
     ChannelList channels() const;
-    ChannelList channels(const QString &ypName) const;
 
     void saveYellowPages();
     void loadYellowPages();

@@ -88,14 +88,6 @@ ChannelList YellowPageManager::channels() const
     return channels;
 }
 
-ChannelList YellowPageManager::channels(const QString &ypName) const
-{
-    foreach (YellowPage *yp, m_yellowPages)
-        if (yp->name() == ypName)
-            return yp->channels();
-    return ChannelList();
-}
-
 void YellowPageManager::clear()
 {
     while (!m_yellowPages.isEmpty())
