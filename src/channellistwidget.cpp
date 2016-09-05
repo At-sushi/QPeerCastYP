@@ -327,10 +327,6 @@ void ChannelListWidget::readSettings()
     s->endGroup();
 }
 
-void ChannelListWidget::polish()
-{
-}
-
 YellowPage *ChannelListWidget::yellowPage() const
 {
     return m_yellowPage;
@@ -778,9 +774,7 @@ void ChannelListWidget::updateCursor()
 
 bool ChannelListWidget::event(QEvent *event)
 {
-    if (event->type() == QEvent::PolishRequest) {
-        polish();
-    } else if (event->type() == QEvent::ToolTip) {
+    if (event->type() == QEvent::ToolTip) {
         return true;
     }
     return QTreeWidget::event(event);

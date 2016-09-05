@@ -94,7 +94,6 @@ signals:
     void linkClicked(Channel *channel);
 
 protected:
-    void polish();
     QRect linkTextRect(QTreeWidgetItem *item, Column column) const;
     void addItems(const QList<Channel *> &channels);
     void updateCursor();
