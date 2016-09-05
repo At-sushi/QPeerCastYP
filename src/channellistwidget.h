@@ -105,8 +105,6 @@ protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void keyPressEvent(QKeyEvent *event);
-    void hideEvent(QHideEvent *event);
-    void showEvent(QShowEvent *event);
 
 private slots:
     void done(YellowPage *yp, bool error);

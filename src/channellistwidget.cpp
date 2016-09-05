@@ -915,16 +915,6 @@ void ChannelListWidget::keyPressEvent(QKeyEvent *event)
     }
 }
 
-void ChannelListWidget::hideEvent(QHideEvent *event)
-{
-    QTreeWidget::hideEvent(event);
-}
-
-void ChannelListWidget::showEvent(QShowEvent *event)
-{
-    QTreeWidget::showEvent(event);
-}
-
 void ChannelListWidget::headerContextMenuRequested(const QPoint &pos)
 {
     Q_UNUSED(pos);
