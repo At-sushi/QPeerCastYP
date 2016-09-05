@@ -27,7 +27,7 @@ protected:
 
     void show(const QPoint &pos, const QString &text, QWidget *widget = 0);
 
-    QSize sizeHint(const QPoint &pos, QWidget *widget = 0);
+    QSize customSizeHint(const QPoint &pos, QWidget *widget = 0);
     void mousePressEvent(QMouseEvent *event);
     void mouseReleaseEvent(QMouseEvent *event);
     void mouseDoubleClickEvent(QMouseEvent *event);

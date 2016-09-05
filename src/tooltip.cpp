@@ -49,11 +49,11 @@ void ToolTip::show(const QPoint &pos, const QString &text, QWidget *widget)
     m_widget = widget;
     setText(text);
     move(pos);
-    resize(sizeHint(pos, widget));
+    resize(customSizeHint(pos, widget));
     QLabel::show();
 }
 
-QSize ToolTip::sizeHint(const QPoint &pos, QWidget *widget)
+QSize ToolTip::customSizeHint(const QPoint &pos, QWidget *widget)
 {
     QPoint p = widget ? widget->mapFromGlobal(pos) : pos;
     int l, t, r, b;
