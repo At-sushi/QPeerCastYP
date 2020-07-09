@@ -170,15 +170,15 @@ Application *Application::instance()
 
 bool Application::event(QEvent *pEvent)
 {
-    Q_ASSERT(m_mainWindow != NULL);
-
     switch (pEvent->type()) {
     case QEvent::ApplicationActivate:
-        m_mainWindow->applicationActivate();
+        if (m_mainWindow)
+	  m_mainWindow->applicationActivate();
         break;
     case QEvent::ApplicationDeactivate:
-        m_mainWindow->applicationDeactivate();
-        break;
+	if (m_mainWindow)
+	    m_mainWindow->applicationDeactivate();
+	break;
     default:
         ;
     }
