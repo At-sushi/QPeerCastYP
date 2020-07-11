@@ -476,6 +476,8 @@ void ChannelListWidget::updateActions()
     actions->addToNGAction()->setEnabled(enabled);
     actions->copyChannelInfoAction()->setEnabled(enabled);
     actions->copyStreamUrlAction()->setEnabled(enabled);
+    actions->openStatsUrlAction()->setEnabled(enabled);
+
     bool contactUrlAvailable = false;
     if (channel) {
         contactUrlAvailable = !channel->contactUrl().isEmpty();
@@ -613,6 +615,12 @@ void ChannelListWidget::openContactUrl()
 {
     if (Channel *channel = currentChannel())
         qApp->actions()->openUrl(channel->contactUrl());
+}
+
+void ChannelListWidget::openStatsUrl()
+{
+    if (Channel *channel = currentChannel())
+        qApp->actions()->openUrl(channel->statsUrl());
 }
 
 void ChannelListWidget::copyStreamUrl()

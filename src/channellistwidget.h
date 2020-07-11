@@ -85,6 +85,7 @@ public slots:
     void addToFavorites(int score = 3);
     void unfavorite();
     void openContactUrl();
+    void openStatsUrl();
     void copyStreamUrl();
     void copyContactUrl();
     void copyChannelInfo();

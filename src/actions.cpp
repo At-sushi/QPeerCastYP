@@ -68,6 +68,11 @@ Actions::Actions(MainWindow *mainWindow)
     m_openContactUrlAction->setShortcut(QKeySequence("Ctrl+Return"));
     connect(m_openContactUrlAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(openContactUrl()));
 
+    m_openStatsUrlAction = new QAction(QIcon(":/images/graph.png"), tr("統計URLを開く(&T)"), this);
+    m_openStatsUrlAction->setIconText(tr("統計"));
+    m_mainWindow->addAction(m_openStatsUrlAction);
+    connect(m_openStatsUrlAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(openStatsUrl()));
+    
     m_openContactUrlWith2chBrowserAction = new QAction(tr("コンタクトURLを&2ちゃんねるブラウザで開く"), this);
     m_openContactUrlWith2chBrowserAction->setShortcut(QKeySequence("Shift+Return"));
     // connect(m_openContactUrlWith2chBrowserAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(openContactUrlWith2chBrowser()));
@@ -198,6 +203,7 @@ QMenu *Actions::channelContextMenu(QWidget *parent) const
     }
     menu->addAction(m_playChannelAction);
     menu->addAction(m_openContactUrlAction);
+    menu->addAction(m_openStatsUrlAction);
     menu->addSeparator();
     menu->addAction(m_addToFavoritesAction);
     menu->addAction(m_unfavoriteAction);
@@ -343,6 +349,11 @@ QAction *Actions::addToNGAction() const
 QAction *Actions::openContactUrlAction() const
 {
     return m_openContactUrlAction;
+}
+
+QAction *Actions::openStatsUrlAction() const
+{
+    return m_openStatsUrlAction;
 }
 
 QAction *Actions::openContactUrlWith2chBrowserAction() const

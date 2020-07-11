@@ -39,6 +39,7 @@ public:
     QAction *addToNGAction() const;
     QAction *openContactUrlAction() const;
     QAction *openContactUrlWith2chBrowserAction() const;
+    QAction *openStatsUrlAction() const;
     QAction *copyStreamUrlAction() const;
     QAction *copyContactUrlAction() const;
     QAction *copyChannelInfoAction() const;
@@ -82,6 +83,7 @@ private:
     QAction *m_unfavoriteAction;
     QAction *m_addToNGAction;
     QAction *m_openContactUrlAction;
+    QAction *m_openStatsUrlAction;
     QAction *m_openContactUrlWith2chBrowserAction;
     QAction *m_copyStreamUrlAction;
     QAction *m_copyContactUrlAction;

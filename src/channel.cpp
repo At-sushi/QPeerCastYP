@@ -337,6 +337,18 @@ QString Channel::bitrateString() const
     return QString::number(bitrate()) + "kb/s";
 }
 
+QUrl Channel::statsUrl() const
+{
+    if (m_yellowPage) {
+	QUrl dir = m_yellowPage->url();
+	dir = dir.resolved(QUrl("./getgmt.php"));
+	dir.setQueryItems({ { "cn", this->name() } });
+	return dir;
+    } else {
+	return QUrl();
+    }
+}
+
 QDebug operator<<(QDebug dbg, const Channel &c)
 {
     dbg << &c << endl

@@ -82,6 +82,8 @@ public:
     void setContactUrl(const QUrl &url);
     bool hasContactUrl() const;
 
+    QUrl statsUrl() const;
+
     qint32 uptime() const;
     QString uptimeString() const;
     void setUptime(qint32 uptime);

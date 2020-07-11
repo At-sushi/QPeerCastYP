@@ -57,6 +57,7 @@ public slots:
     void unfavorite();
     void addToNG();
     void openContactUrl();
+    void openStatsUrl();
     void copyStreamUrl();
     void copyContactUrl();
     void copyChannelInfo();

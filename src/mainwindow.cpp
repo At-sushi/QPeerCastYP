@@ -413,6 +413,12 @@ void MainWindow::openContactUrl()
         currentChannelListWidget()->openContactUrl();
 }
 
+void MainWindow::openStatsUrl()
+{
+    if (currentChannelListWidget())
+        currentChannelListWidget()->openStatsUrl();
+}
+
 void MainWindow::copyStreamUrl()
 {
     if (currentChannelListWidget())
