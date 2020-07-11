@@ -206,10 +206,8 @@ QMenu *Actions::channelContextMenu(QWidget *parent) const
     menu->addAction(m_copyChannelInfoAction);
     menu->addAction(m_copyStreamUrlAction);
     menu->addAction(m_copyContactUrlAction);
-    if (m_mainWindow->menuBar()->isHidden() && m_mainWindow->toolBar()->isHidden()) {
-        menu->addSeparator();
-        menu->addAction(m_findChannelAction);
-    }
+    menu->addSeparator();
+    menu->addAction(m_findChannelAction);
 #ifndef Q_WS_MAC
     if (m_mainWindow->menuBar()->isHidden()) {
         menu->addSeparator();
