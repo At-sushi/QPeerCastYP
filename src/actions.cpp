@@ -24,19 +24,16 @@ Actions::Actions(MainWindow *mainWindow)
     m_quitAction = new QAction(QIcon(":/images/exit.png"), tr("終了(&Q)"), this);
     m_quitAction->setShortcut(QKeySequence(tr("Ctrl+Q")));
     m_quitAction->setMenuRole(QAction::QuitRole);
-    m_mainWindow->addAction(m_quitAction);
     connect(m_quitAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(quit()));
 
     // イエローページ
     m_updateYellowPageAction = new QAction(QIcon(":/images/reload.png"), tr("イエローページを更新(&R)"), this);
     m_updateYellowPageAction->setShortcut(QKeySequence("Ctrl+R"));
-    m_mainWindow->addAction(m_updateYellowPageAction);
     connect(m_updateYellowPageAction, SIGNAL(changed()), this, SLOT(updateYellowPageActionChanged()));
     connect(m_updateYellowPageAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(updateYellowPage()));
 
     m_toggleAutoUpdateAction = new QAction(QIcon(), tr("自動更新を有効に(&A)"), this);
     m_toggleAutoUpdateAction->setCheckable(true);
-    m_mainWindow->addAction(m_toggleAutoUpdateAction);
     connect(m_toggleAutoUpdateAction, SIGNAL(toggled(bool)), m_mainWindow, SLOT(setAutoUpdateEnabled(bool)));
 
     m_updateYellowPageToolBarAction = new QAction(m_updateYellowPageAction->icon(),
@@ -46,106 +43,87 @@ Actions::Actions(MainWindow *mainWindow)
     m_updateYellowPageToolBarAction->setMenu(new QMenu(m_mainWindow));
     m_updateYellowPageToolBarAction->menu()->addAction(m_toggleAutoUpdateAction);
 #endif
-    m_mainWindow->addAction(m_updateYellowPageAction);
     connect(m_updateYellowPageToolBarAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(updateYellowPage()));
 
     m_playChannelAction = new QAction(QIcon(":/images/play.png"), tr("チャンネルを再生(&P)"), this);
     m_playChannelAction->setIconText(tr("再生"));
-    m_mainWindow->addAction(m_playChannelAction);
     connect(m_playChannelAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(playChannel()));
 
     m_addToFavoritesAction = new QAction(QIcon(":/images/favorite.png"), tr("お気に入りに追加(&A)"), this);
     m_addToFavoritesAction->setIconText(tr("お気に入り"));
     m_addToFavoritesAction->setShortcut(QKeySequence("Ctrl+D"));
-    m_mainWindow->addAction(m_addToFavoritesAction);
     connect(m_addToFavoritesAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(addToFavorites()));
 
     m_unfavoriteAction = new QAction(QIcon(":/images/unfavorite.png"), tr("お気に入り解除(&U)"), this);
     m_unfavoriteAction->setIconText(tr("お気に入り解除"));
-    m_mainWindow->addAction(m_unfavoriteAction);
     connect(m_unfavoriteAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(unfavorite()));
 
     m_addToNGAction = new QAction(QIcon(":/images/stopped.png"), tr("NGに追加(&N)"), this);
     m_addToNGAction->setIconText(tr("NG"));
     m_addToNGAction->setShortcut(QKeySequence("Ctrl+Shift+D"));
-    m_mainWindow->addAction(m_addToNGAction);
     connect(m_addToNGAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(addToNG()));
 
     m_openContactUrlAction = new QAction(QIcon(":/images/browser.png"), tr("コンタクトURLを開く(&W)"), this);
     m_openContactUrlAction->setIconText(tr("コンタクト"));
     m_openContactUrlAction->setShortcut(QKeySequence("Ctrl+Return"));
-    m_mainWindow->addAction(m_openContactUrlAction);
     connect(m_openContactUrlAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(openContactUrl()));
 
     m_openContactUrlWith2chBrowserAction = new QAction(tr("コンタクトURLを&2ちゃんねるブラウザで開く"), this);
     m_openContactUrlWith2chBrowserAction->setShortcut(QKeySequence("Shift+Return"));
-    m_mainWindow->addAction(m_openContactUrlWith2chBrowserAction);
     // connect(m_openContactUrlWith2chBrowserAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(openContactUrlWith2chBrowser()));
 
     m_copyChannelInfoAction = new QAction(QIcon(":/images/copy.png"), tr("チャンネル情報をコピー(&I)"), this);
     m_copyChannelInfoAction->setShortcut(QKeySequence("Ctrl+C,Ctrl+C"));
-    m_mainWindow->addAction(m_copyChannelInfoAction);
     connect(m_copyChannelInfoAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(copyChannelInfo()));
 
     m_copyStreamUrlAction = new QAction(QIcon(":/images/copy.png"), tr("ストリームURLをコピー(&S)"), this);
     m_copyStreamUrlAction->setShortcut(QKeySequence("Ctrl+C,Ctrl+S"));
-    m_mainWindow->addAction(m_copyStreamUrlAction);
     connect(m_copyStreamUrlAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(copyStreamUrl()));
 
     m_copyContactUrlAction = new QAction(QIcon(":/images/copy.png"), tr("コンタクトURLをコピー(&C)"), this);
     m_copyContactUrlAction->setShortcut(QKeySequence("Ctrl+C,Ctrl+T"));
-    m_mainWindow->addAction(m_copyContactUrlAction);
     connect(m_copyContactUrlAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(copyContactUrl()));
 
     m_findChannelAction = new QAction(QIcon(":/images/find.png"), tr("チャンネルを検索(&F)"), this);
     m_findChannelAction->setIconText(tr("検索"));
     m_findChannelAction->setShortcut(QKeySequence("Ctrl+F"));
-    m_mainWindow->addAction(m_findChannelAction);
     connect(m_findChannelAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(findChannel()));
 
     // 設定
     m_showMenuBarAction = new QAction(tr("メニューバーを表示(&M)"), this);
     m_showMenuBarAction->setCheckable(true);
     m_showMenuBarAction->setShortcut(QKeySequence("Ctrl+M"));
-    m_mainWindow->addAction(m_showMenuBarAction);
     connect(m_showMenuBarAction, SIGNAL(toggled(bool)), m_mainWindow, SLOT(setMenuBarVisible(bool)));
 
     m_showToolBarAction = new QAction(tr("ツールバーを表示(&T)"), this);
     m_showToolBarAction->setCheckable(true);
-    m_mainWindow->addAction(m_showToolBarAction);
     connect(m_showToolBarAction, SIGNAL(toggled(bool)), m_mainWindow, SLOT(setToolBarVisible(bool)));
 
     m_showStatusBarAction = new QAction(tr("ステータスバーを表示(&A)"), this);
     m_showStatusBarAction->setCheckable(true);
-    m_mainWindow->addAction(m_showStatusBarAction);
     connect(m_showStatusBarAction, SIGNAL(toggled(bool)), m_mainWindow, SLOT(setStatusBarVisible(bool)));
 
     m_showTabBarAction = new QAction(tr("タブバーを表示(&B)"), this);
     m_showTabBarAction->setShortcut(QKeySequence("Ctrl+T"));
     m_showTabBarAction->setCheckable(true);
-    m_mainWindow->addAction(m_showTabBarAction);
     connect(m_showTabBarAction, SIGNAL(toggled(bool)), m_mainWindow, SLOT(setTabBarVisible(bool)));
 
     m_showSettingsAction = new QAction(QIcon(":/images/configure.png"), tr("%1 を設定(&C)...").arg(QApplication::applicationName()), this);
     m_showSettingsAction->setIconText(tr("設定"));
     m_showSettingsAction->setMenuRole(QAction::PreferencesRole);
-    m_mainWindow->addAction(m_showSettingsAction);
     connect(m_showSettingsAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(showSettings()));
 
     m_showFavoritesAction = new QAction(QIcon(":/images/organize_favorites.png"), tr("お気に入りを整理(&O)..."), this);
     m_showFavoritesAction->setIconText(tr("お気に入りを整理"));
-    m_mainWindow->addAction(m_showFavoritesAction);
     connect(m_showFavoritesAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(showFavorites()));
 
     // ヘルプ
     m_aboutQPeerCastYPAction = new QAction(tr("Q&PeerCastYP について"), this);
     m_aboutQPeerCastYPAction->setIcon(QApplication::windowIcon());
     m_aboutQPeerCastYPAction->setMenuRole(QAction::AboutRole);
-    m_mainWindow->addAction(m_aboutQPeerCastYPAction);
     connect(m_aboutQPeerCastYPAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(aboutQPeerCastYP()));
 
     m_aboutQtAction = new QAction(tr("&Qt について"), this);
-    m_mainWindow->addAction(m_aboutQtAction);
     connect(m_aboutQtAction, SIGNAL(triggered(bool)), m_mainWindow, SLOT(aboutQt()));
 }
 
