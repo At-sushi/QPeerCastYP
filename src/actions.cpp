@@ -171,31 +171,9 @@ QMenu *Actions::channelMenu(QWidget *parent) const
     return menu;
 }
 
-void Actions::contextMenuAboutToShow() {
-    m_openContactUrlAction  ->setShortcut(0);
-    m_addToFavoritesAction  ->setShortcut(0);
-    m_addToNGAction         ->setShortcut(0);
-    m_copyChannelInfoAction ->setShortcut(0);
-    m_copyStreamUrlAction   ->setShortcut(0);
-    m_copyContactUrlAction  ->setShortcut(0);
-}
-
-void Actions::contextMenuAboutToHide() {
-    m_openContactUrlAction  ->setShortcut(QKeySequence("Ctrl+Return"));
-    m_addToFavoritesAction  ->setShortcut(QKeySequence("Ctrl+D"));
-    m_addToNGAction         ->setShortcut(QKeySequence("Ctrl+Shift+D"));
-    m_copyChannelInfoAction ->setShortcut(QKeySequence("Ctrl+C,Ctrl+C"));
-    m_copyStreamUrlAction   ->setShortcut(QKeySequence("Ctrl+C,Ctrl+S"));
-    m_copyContactUrlAction  ->setShortcut(QKeySequence("Ctrl+C,Ctrl+T"));
-}
-
 QMenu *Actions::channelContextMenu(QWidget *parent) const
 {
     QMenu *menu = new QMenu("チャンネルコンテキストメニュー", parent);
-
-    connect(menu, SIGNAL(aboutToShow()), this, SLOT(contextMenuAboutToShow()));
-    connect(menu, SIGNAL(aboutToHide()), this, SLOT(contextMenuAboutToHide()));
-
     if (m_mainWindow->menuBar()->isHidden() && m_mainWindow->toolBar()->isHidden()) {
         menu->addAction(m_updateYellowPageAction);
         menu->addAction(m_toggleAutoUpdateAction);
