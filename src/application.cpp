@@ -167,21 +167,3 @@ Application *Application::instance()
 {
     return qobject_cast<Application *>(QApplication::instance());
 }
-
-bool Application::event(QEvent *pEvent)
-{
-    switch (pEvent->type()) {
-    case QEvent::ApplicationActivate:
-        if (m_mainWindow)
-	  m_mainWindow->applicationActivate();
-        break;
-    case QEvent::ApplicationDeactivate:
-	if (m_mainWindow)
-	    m_mainWindow->applicationDeactivate();
-	break;
-    default:
-        ;
-    }
-
-    return QApplication::event(pEvent);
-}

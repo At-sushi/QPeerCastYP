@@ -578,16 +578,3 @@ void MainWindow::aboutQPeerCastYP()
     dialog.exec();
 }
 
-void MainWindow::applicationActivate()
-{
-    if (m_autoUpdateEnabled) {
-        m_autoUpdateTimer.stop();
-    }
-}
-
-void MainWindow::applicationDeactivate()
-{
-    if (m_autoUpdateEnabled) {
-        m_autoUpdateTimer.start();
-    }
-}
