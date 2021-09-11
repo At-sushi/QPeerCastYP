@@ -9,6 +9,8 @@ INCLUDEPATH += . src
 
 DEFINES += VERSION=\\\"$$VERSION\\\"
 
+QMAKE_CXXFLAGS += -std=c++17
+
 macx {
     TARGET = QPeerCastYP
     CONFIG += app_bundle
